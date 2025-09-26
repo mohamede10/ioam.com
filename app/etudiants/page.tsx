@@ -16,19 +16,19 @@ export default function Etudiants() {
         <h2 className="text-2xl font-bold text-blue-800 mb-6">Services aux étudiants</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg text-center">
-            <h3 className="text-xl font-semibold text-blue-900">🏠 Logement</h3>
+            <h3 className="text-xl font-semibold text-blue-900"> Logement</h3>
             <p className="mt-2 text-gray-600">
               Résidences universitaires à proximité du campus et accompagnement pour la recherche de logement privé.
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg text-center">
-            <h3 className="text-xl font-semibold text-blue-900">🍽️ Restauration</h3>
+            <h3 className="text-xl font-semibold text-blue-900"> Restauration</h3>
             <p className="mt-2 text-gray-600">
               Restaurants universitaires et cafétérias proposant des repas équilibrés à prix accessibles.
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg text-center">
-            <h3 className="text-xl font-semibold text-blue-900">🎓 Bourses</h3>
+            <h3 className="text-xl font-semibold text-blue-900"> Bourses</h3>
             <p className="mt-2 text-gray-600">
               Accès à des programmes de bourses nationales et internationales pour soutenir les études.
             </p>
@@ -56,7 +56,7 @@ export default function Etudiants() {
         <div className="grid sm:grid-cols-2 gap-8">
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg">
             <p className="text-gray-600 italic">
-              "L’IOAM m’a permis de développer des compétences solides en mathématiques et d’accéder à des opportunités de recherche internationale."
+              L’IOAM m’a permis de développer des compétences solides en mathématiques et d’accéder à des opportunités de recherche internationale.
             </p>
             <div className="mt-4 flex items-center gap-3">
               <Image
@@ -75,7 +75,7 @@ export default function Etudiants() {
 
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg">
             <p className="text-gray-600 italic">
-              "Un environnement d’apprentissage exceptionnel avec des professeurs passionnés et un réseau international fort."
+              Un environnement d’apprentissage exceptionnel avec des professeurs passionnés et un réseau international fort.
             </p>
             <div className="mt-4 flex items-center gap-3">
               <Image
