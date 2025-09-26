@@ -1,0 +1,120 @@
+app/
+ ├─ page.tsx                # Page d'accueil
+ ├─ about/                  # À propos
+ │   └─ page.tsx
+ ├─ programmes/             # Programmes académiques
+ │   └─ page.tsx
+ ├─ recherche/              # Recherche
+ │   └─ page.tsx
+ ├─ enseignants/            # Corps enseignant
+ │   └─ page.tsx
+ ├─ etudiants/              # Vie étudiante
+ │   └─ page.tsx
+ ├─ partenariats/           # Partenariats et coopération
+ │   └─ page.tsx
+ ├─ actualites/             # Actualités et événements
+ │   └─ page.tsx
+ ├─ admissions/             # Espace admissions
+ │   └─ page.tsx
+ ├─ ressources/             # Ressources pédagogiques
+ │   └─ page.tsx
+ ├─ contact/                # Contact
+ │   └─ page.tsx
+ └─ not-found.tsx           # Page 404
+
+contenu par section
+1. Page d’accueil (app/page.tsx)
+
+Slider d’images (react-slick ou swiper.js)
+
+Présentation brève de l’institut
+
+Bloc d’actualités récentes (carte dynamique)
+
+Boutons rapides vers "Programmes", "Admissions", "Contact"
+
+2. À propos (app/about/page.tsx)
+
+Histoire de l’IOAM
+
+Mission, vision, valeurs
+
+Organigramme (tableau ou schéma)
+
+Logos des partenaires cliquables
+
+3. Programmes (app/programmes/page.tsx)
+
+Licences, Masters, Doctorats (cartes avec détails)
+
+Conditions d’admission
+
+Téléchargement des brochures (public/docs/brochure.pdf)
+
+Calendrier académique
+
+4. Recherche (app/recherche/page.tsx)
+
+Domaines de recherche
+
+Projets en cours
+
+Publications (liste ou base filtrable)
+
+Appels à contributions
+
+5. Enseignants (app/enseignants/page.tsx)
+
+Liste des enseignants (photo, nom, spécialité)
+
+Lien vers Google Scholar ou ORCID
+
+CV téléchargeables (PDF)
+
+6. Vie étudiante (app/etudiants/page.tsx)
+
+Associations étudiantes
+
+Activités parascolaires
+
+Galerie photos
+
+Témoignages étudiants (slider)
+
+7. Partenariats (app/partenariats/page.tsx)
+
+Logos cliquables
+
+Carte interactive des collaborations
+
+8. Actualités (app/actualites/page.tsx)
+
+Blog/fil d’actualités
+
+Agenda interactif (calendrier avec événements)
+
+9. Admissions (app/admissions/page.tsx)
+
+Formulaires de candidature
+
+FAQ
+
+Frais de scolarité
+
+Formulaire de contact spécifique
+
+10. Ressources (app/ressources/page.tsx)
+
+Bibliothèque numérique
+
+Accès aux cours en ligne
+
+Documents téléchargeables (sécurisés avec login)
+
+11. Contact (app/contact/page.tsx)
+
+Adresse, téléphone, email
+
+Carte Google Maps intégrée
+
+Formulaire de contact avec envoi (ex: via Nodemailer)
