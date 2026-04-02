@@ -7,23 +7,23 @@ export default function Ressources() {
   const docs = [
     {
       id: 1,
-      title: "Guide des admissions 2025-2026",
+      title: "Guide des projetss 2025-2026",
       description:
-        "Tout savoir sur les conditions d’admission et le processus d’inscription.",
-      file: "/docs/guide-admissions.pdf",
+        "Tout savoir sur les conditions d’projets et le processus d’inscription.",
+      file: "/docs/guide-projetss.pdf",
     },
     {
       id: 2,
-      title: "Programme Master en Mathématiques",
+      title: "services Master en Mathématiques",
       description: "Description détaillée des cours, crédits et débouchés.",
-      file: "/docs/programme-master.pdf",
+      file: "/docs/services-master.pdf",
     },
     {
       id: 3,
-      title: "Programme Doctorat en Mathématiques",
+      title: "services Doctorat en Mathématiques",
       description:
         "Informations sur la recherche, la méthodologie et les encadrements.",
-      file: "/docs/programme-doctorat.pdf",
+      file: "/docs/services-doctorat.pdf",
     },
   ];
 

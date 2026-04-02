@@ -30,7 +30,7 @@ export default function Etudiants() {
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg text-center">
             <h3 className="text-xl font-semibold text-blue-900"> Bourses</h3>
             <p className="mt-2 text-gray-600">
-              Accès à des programmes de bourses nationales et internationales pour soutenir les études.
+              Accès à des Services de bourses nationales et internationales pour soutenir les études.
             </p>
           </div>
         </div>

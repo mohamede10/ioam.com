@@ -8,7 +8,7 @@ const cfg = {
   year: "2025-2026",
   location: "GAMAL, Guinée",
   emails: {
-    admissions: "admissions@ioam.edu.gn",
+    projetss: "projetss@ioam.edu.gn",
     copy: "secretariat.mesri@exemple.gov.gn", // TODO: remplacer
   },
   capacity: { master: 30, phd: 15, foreignShare: 0.4 },
@@ -76,13 +76,13 @@ export default function AppelPage() {
             {cfg.school}
           </h2>
           <p className="mt-6 text-lg text-gray-700 max-w-3xl">
-            Programmes de <strong>Master</strong> et <strong>Doctorat</strong> en
+            Services de <strong>Master</strong> et <strong>Doctorat</strong> en
             Mathématiques visant à renforcer la recherche et l’enseignement
             supérieur en Afrique de l’Ouest.
           </p>
            <p className="text-lg text-gray-700 mb-6">
           L’Institut Ouest Africain de Mathématiques (IOAM) lance un appel à
-          candidatures pour les programmes de Master et Doctorat en
+          candidatures pour les Services de Master et Doctorat en
           Mathématiques.
           </p>
           <p>
@@ -101,7 +101,7 @@ export default function AppelPage() {
 
           <div className="mt-10 flex flex-wrap gap-3 justify-center">
             <a
-              href="/admissions/postuler"
+              href="/projetss/postuler"
               className="inline-flex items-center justify-center rounded-2xl px-5 py-3 text-base font-semibold bg-blue-900 text-white hover:opacity-90"
             >
               Postuler maintenant

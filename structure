@@ -2,7 +2,7 @@ app/
  ├─ page.tsx                # Page d'accueil
  ├─ about/                  # À propos
  │   └─ page.tsx
- ├─ programmes/             # Programmes académiques
+ ├─ Services/             # Services académiques
  │   └─ page.tsx
  ├─ recherche/              # Recherche
  │   └─ page.tsx
@@ -14,7 +14,7 @@ app/
  │   └─ page.tsx
  ├─ actualites/             # Actualités et événements
  │   └─ page.tsx
- ├─ admissions/             # Espace admissions
+ ├─ projetss/             # Espace projetss
  │   └─ page.tsx
  ├─ ressources/             # Ressources pédagogiques
  │   └─ page.tsx
@@ -31,7 +31,7 @@ Présentation brève de l’institut
 
 Bloc d’actualités récentes (carte dynamique)
 
-Boutons rapides vers "Programmes", "Admissions", "Contact"
+Boutons rapides vers "Services", "projetss", "Contact"
 
 2. À propos (app/about/page.tsx)
 
@@ -43,11 +43,11 @@ Organigramme (tableau ou schéma)
 
 Logos des partenaires cliquables
 
-3. Programmes (app/programmes/page.tsx)
+3. Services (app/Services/page.tsx)
 
 Licences, Masters, Doctorats (cartes avec détails)
 
-Conditions d’admission
+Conditions d’projets
 
 Téléchargement des brochures (public/docs/brochure.pdf)
 
@@ -93,7 +93,7 @@ Blog/fil d’actualités
 
 Agenda interactif (calendrier avec événements)
 
-9. Admissions (app/admissions/page.tsx)
+9. projetss (app/projetss/page.tsx)
 
 Formulaires de candidature
 
