@@ -22,19 +22,34 @@ export default function Home() {
   const currentYear = new Date().getFullYear();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Images du slider
+  // Slides avec images et textes personnalisés
   const slides = [
     {
-      src: "/images/slide/slide (5).jpg",
-      alt: "COTECH SERVICES - Solutions IT innovantes"
+      src: "/images/slide/slide1.png",
+      alt: "COTECH SERVICES - Formation",
+      title: "Formation & Certification",
+      subtitle: "Développez vos compétences technologiques",
+      buttonText: "Découvrir nos formations",
+      buttonLink: "/formations",
+      icon: GraduationCap
     },
     {
-      src: "/images/slide/slide (6).jpg",
-      alt: "COTECH SERVICES - Systèmes intelligents IoT"
+      src: "/images/slide/slide2.jpg",
+      alt: "COTECH SERVICES - Solutions Numériques",
+      title: "Solutions IT sur Mesure",
+      subtitle: "Transformez votre entreprise avec le digital",
+      buttonText: "Découvrir nos solutions",
+      buttonLink: "/services",
+      icon: Code2
     },
     {
-      src: "/images/slide/slide (7).png",
-      alt: "COTECH SERVICES - Formation et accompagnement"
+      src: "/images/slide/slide3.png",
+      alt: "COTECH SERVICES - Systèmes Embarqués & IoT",
+      title: "Systèmes Embarqués & IoT",
+      subtitle: "L'innovation au service de votre quotidien",
+      buttonText: "Explorer nos solutions IoT",
+      buttonLink: "/solutions-iot",
+      icon: Cpu
     }
   ];
 
@@ -42,7 +57,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -55,7 +70,7 @@ export default function Home() {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // Services principaux selon votre document
+  // Services principaux
   const services = [
     {
       icon: Code2,
@@ -95,7 +110,7 @@ export default function Home() {
     }
   ];
 
-  // Avantages selon votre document
+  // Avantages
   const avantages = [
     {
       icon: Shield,
@@ -122,42 +137,82 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section avec Slider */}
-      <section className="relative w-full h-[70vh] overflow-hidden">
+      <section className="relative w-full h-[60vh] overflow-hidden">
         {/* Images du slider */}
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              className="object-cover brightness-75"
-              priority={index === 0}
-            />
-          </div>
-        ))}
+        {slides.map((slide, index) => {
+          const Icon = slide.icon;
+          return (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                className="object-cover brightness-50"
+                priority={index === 0}
+              />
+              
+              {/* Contenu du slide */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30">
+                <div className="h-full flex items-center justify-center">
+                  <div className="max-w-4xl mx-auto px-6 text-center text-white">
+                    <div className="mb-4 flex justify-center">
+                      <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full">
+                        <Icon className="h-12 w-12" />
+                      </div>
+                    </div>
+                    <h4 className="text-2xl sm:text-5xl md:text-6xl font-extrabold mb-4">
+                      {slide.title}
+                    </h4>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-blue-300">
+                      {slide.subtitle}
+                    </p>
+                    
+                    {/* Features */}
+                    
+                    
+                    <div className="flex flex-wrap justify-center gap-4">
+                      <a
+                        href={slide.buttonLink}
+                        className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg"
+                      >
+                        {slide.buttonText}
+                      </a>
+                      <a
+                        href="/contact"
+                        className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition"
+                      >
+                        Demander un devis
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
 
         {/* Boutons de navigation */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition backdrop-blur-sm"
         >
           <ChevronLeft className="h-6 w-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition backdrop-blur-sm"
         >
           <ChevronRightIcon className="h-6 w-6" />
         </button>
 
         {/* Indicateurs (dots) */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-          {slides.map((_, index) => (
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {slides.map((slide, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
@@ -169,62 +224,25 @@ export default function Home() {
             />
           ))}
         </div>
-
-        {/* Contenu */}
-        <div className="relative z-10 h-full flex items-center justify-center text-center">
-          <div className="max-w-3xl px-4">
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-white drop-shadow-lg">
-              COTECH SERVICES
-            </h1>
-            <p className="mt-4 text-xl sm:text-2xl text-white drop-shadow font-semibold">
-              Solutions IT & Systèmes Intelligents
-            </p>
-            <p className="mt-4 text-base sm:text-lg text-gray-100 drop-shadow">
-              Entreprise multiservices spécialisée dans les technologies de l'information,
-              les solutions numériques et les systèmes intelligents pour l'Afrique.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <a
-                href="/contact"
-                className="px-6 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-blue-800 transition text-sm sm:text-base"
-              >
-                Demander un devis
-              </a>
-              <a
-                href="/services"
-                className="px-6 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-900 transition text-sm sm:text-base"
-              >
-                Nos services
-              </a>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Présentation rapide */}
       <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-        {/* Image à gauche */}
-        <div className="flex justify-center">
-          <Image
-            src="/images/cotech-about.jpg"
-            alt="COTECH SERVICES - Innovation technologique"
-            width={500}
-            height={400}
-            className="rounded-lg shadow-lg object-cover"
-          />
-        </div>
-
-        {/* Texte à droite */}
         <div className="text-center md:text-left">
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
             Qui sommes-nous ?
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4 text-justify">
             <span className="font-semibold">COTECH SERVICES</span> est une entreprise multiservices 
             spécialisée dans les technologies de l'information (IT), les solutions numériques, 
             les systèmes intelligents (IoT), la maintenance matérielle et logicielle.
+            L'entreprise propose des services professionnels adaptés aux particuliers, entreprises, institutions et organisations souhaitant moderniser leurs infrastructures technologiques.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed mb-4 text-justify">
+              Elle fonctionne principalement en ligne et offre des prestations à distance ainsi que des interventions techniques sur site dans un rayon déterminé selon les besoins des clients.
+          </p>
+  
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
             Nous proposons des services professionnels adaptés aux particuliers, entreprises, 
             institutions et organisations souhaitant moderniser leurs infrastructures technologiques.
           </p>
@@ -243,10 +261,19 @@ export default function Home() {
             </a>
           </div>
         </div>
+        <div className="flex justify-center">
+          <Image
+            src="/images/apropos/pdg.jpg"
+            alt="COTECH SERVICES - Innovation technologique"
+            width={500}
+            height={300}
+            className="rounded-lg shadow-lg object-cover"
+          />
+        </div>
       </section>
 
       {/* Services */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -288,7 +315,7 @@ export default function Home() {
       </section>
 
       {/* Pourquoi choisir COTECH SERVICES */}
-      <section className="py-16 max-w-7xl mx-auto px-4">
+      <section className="py-8 max-w-7xl mx-auto px-4">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-12">
           Pourquoi choisir COTECH SERVICES ?
         </h2>
@@ -317,22 +344,22 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <GraduationCap className="h-16 w-16 mx-auto mb-4" />
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Formation & Accompagnement
+            Formation & Certification
           </h2>
           <p className="text-xl mb-6 max-w-2xl mx-auto">
             Nous formons la prochaine génération d'experts en technologies numériques
           </p>
           <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
             <div className="bg-blue-800 p-4 rounded-lg">
-              <h4 className="font-semibold mb-2">💻 Bureautique & Internet</h4>
+              <h4 className="font-semibold mb-2">Bureautique & Internet</h4>
               <p className="text-sm text-blue-100">Initiation à l'informatique</p>
             </div>
             <div className="bg-blue-800 p-4 rounded-lg">
-              <h4 className="font-semibold mb-2">🌐 Développement Web</h4>
+              <h4 className="font-semibold mb-2">Développement Web</h4>
               <p className="text-sm text-blue-100">HTML/CSS, JavaScript, PHP</p>
             </div>
             <div className="bg-blue-800 p-4 rounded-lg">
-              <h4 className="font-semibold mb-2">🔧 Réseaux & IoT</h4>
+              <h4 className="font-semibold mb-2">Réseaux & IoT</h4>
               <p className="text-sm text-blue-100">Administration, Arduino, capteurs</p>
             </div>
           </div>
@@ -351,7 +378,6 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Informations de contact */}
             <div>
               <h2 className="text-3xl font-bold text-blue-900 mb-6">
                 Contactez-nous
@@ -396,7 +422,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Zone d'intervention */}
             <div className="bg-white p-6 rounded-lg shadow">
               <h3 className="text-xl font-bold text-blue-900 mb-4">
                 Zone d'intervention
@@ -415,10 +440,12 @@ export default function Home() {
                   <span className="text-gray-600">Étude au cas par cas</span>
                 </div>
               </div>
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                <p className="text-center text-blue-900 font-semibold">
-                  📞 Disponible sur WhatsApp : +224 610 093 485
-                </p>
+              <div className="mt-6 p-4 bg-blue-800 rounded-lg text-center text-white">
+                <a
+                  href="https://wa.me/224610093485?text=Bonjour%20COTECH%20SERVICES%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services.%20Pouvez-vous%20me%20renseigner%20%3F%0A%0A--Source--%0A%20Message%20envoy%C3%A9%20depuis%20mon%20site%20web%20cotechservices.com"
+                >
+                  Disponible sur WhatsApp : +224 610 093 485
+                </a>
               </div>
             </div>
           </div>

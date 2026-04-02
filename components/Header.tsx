@@ -27,7 +27,7 @@ export default function Header() {
         {/* Logo + texte ensemble */}
         <Link href="/" className="flex items-center gap-3">
           <Image src="/images/logo/logo.png" alt="Logo COTECH SERVICES" width={75} height={75} />
-          <div className="flex flex-col">
+          <div className="flex-col hidden sm:block">
             <span className="font-bold text-blue-900 text-sm sm:text-base">
               COTECH SERVICES
             </span>

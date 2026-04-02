@@ -1,0 +1,11 @@
+/
+├── about/          (Présentation, vision, mission, valeurs)
+├── services/       (Vue d'ensemble des 6 domaines)
+├── projets/        (Portfolio/réalisations)
+├── solutions-iot/  (IoT & systèmes intelligents)
+├── infrastructure-reseau/ (Réseaux & sécurité)
+├── maintenance/    (Maintenance matérielle/logicielle)
+├── ventes-equipements/ (Vente de matériel)
+├── gps/            (Installation GPS & suivi flotte)
+├── formations/     (Formations & accompagnement)
+└── contact/        (Formulaire de contact)
