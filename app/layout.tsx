@@ -5,10 +5,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "IOAM - Institut Ouest Africain de Mathématiques",
-  description: "Université IOAM - Master & Doctorat en Mathématiques",
+  title: "COTECH SERVICES - IT ",
+  description: "Solutions IT & Systèmes Intelligents",
   icons: {
-    icon: "/images/favicon.ico",
+    icon: "/images/favicon/favicon.ico",
   },
 };
 

@@ -26,10 +26,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo + texte ensemble */}
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo.jpg" alt="Logo IOAM" width={45} height={45} />
-          <span className="font-bold text-blue-900 text-xs sm:text-base">
-            Institut Ouest Africain de Mathématiques
-          </span>
+          <Image src="/images/logo/logo.png" alt="Logo COTECH SERVICES" width={75} height={75} />
+          <div className="flex flex-col">
+            <span className="font-bold text-blue-900 text-sm sm:text-base">
+              COTECH SERVICES
+            </span>
+            <span className="text-xs text-gray-500 hidden sm:block">
+              Solutions IT & Systèmes Intelligents
+            </span>
+          </div>
         </Link>
 
         {/* Bouton burger (mobile) */}
@@ -48,11 +53,11 @@ export default function Header() {
           <Link href="/about" className={navLinkClass("/about")}>
             À propos
           </Link>
-          <Link href="/programmes" className={navLinkClass("/programmes")}>
-            Programmes
+          <Link href="/services" className={navLinkClass("/services")}>
+            Services
           </Link>
-          <Link href="/admissions" className={navLinkClass("/admissions")}>
-            Admissions
+          <Link href="/projets" className={navLinkClass("/projets")}>
+            Projets
           </Link>
 
           {/* Menu déroulant Plus */}
@@ -60,11 +65,12 @@ export default function Header() {
             <button
               className={`flex items-center gap-1 ${
                 [
-                  "/recherche",
-                  "/enseignants",
-                  "/etudiants",
-                  "/actualites",
-                  "/ressources",
+                  "/solutions-iot",
+                  "/infrastructure-reseau",
+                  "/maintenance",
+                  "/ventes-equipements",
+                  "/gps",
+                  "/formations",
                   "/contact",
                 ].includes(pathname)
                   ? "text-blue-900 font-semibold border-b-2 border-blue-900"
@@ -74,22 +80,25 @@ export default function Header() {
               Plus ▾
             </button>
 
-            {/* Contenu du menu (reste affiché tant que la souris est dessus) */}
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <Link href="/recherche" className={dropdownLinkClass("/recherche")}>
-                Recherche
+            {/* Contenu du menu */}
+            <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <Link href="/solutions-iot" className={dropdownLinkClass("/solutions-iot")}>
+                Solutions IoT
               </Link>
-              <Link href="/enseignants" className={dropdownLinkClass("/enseignants")}>
-                Enseignants
+              <Link href="/infrastructure-reseau" className={dropdownLinkClass("/infrastructure-reseau")}>
+                Infrastructures Réseau
               </Link>
-              <Link href="/etudiants" className={dropdownLinkClass("/etudiants")}>
-                Étudiants
+              <Link href="/maintenance" className={dropdownLinkClass("/maintenance")}>
+                Maintenance IT
               </Link>
-              <Link href="/actualites" className={dropdownLinkClass("/actualites")}>
-                Actualités
+              <Link href="/ventes-equipements" className={dropdownLinkClass("/ventes-equipements")}>
+                Vente d'Équipements
               </Link>
-              <Link href="/ressources" className={dropdownLinkClass("/ressources")}>
-                Ressources
+              <Link href="/gps" className={dropdownLinkClass("/gps")}>
+                Systèmes GPS
+              </Link>
+              <Link href="/formations" className={dropdownLinkClass("/formations")}>
+                Formations
               </Link>
               <Link href="/contact" className={dropdownLinkClass("/contact")}>
                 Contact
@@ -117,53 +126,60 @@ export default function Header() {
                 À propos
               </Link>
               <Link
-                href="/programmes"
-                className={navLinkClass("/programmes")}
+                href="/services"
+                className={navLinkClass("/services")}
                 onClick={() => setIsOpen(false)}
               >
-                Programmes
+                Services
               </Link>
               <Link
-                href="/admissions"
-                className={navLinkClass("/admissions")}
+                href="/projets"
+                className={navLinkClass("/projets")}
                 onClick={() => setIsOpen(false)}
               >
-                Admissions
+                Projets
               </Link>
               <Link
-                href="/recherche"
-                className={navLinkClass("/recherche")}
+                href="/solutions-iot"
+                className={navLinkClass("/solutions-iot")}
                 onClick={() => setIsOpen(false)}
               >
-                Recherche
+                Solutions IoT
               </Link>
               <Link
-                href="/enseignants"
-                className={navLinkClass("/enseignants")}
+                href="/infrastructure-reseau"
+                className={navLinkClass("/infrastructure-reseau")}
                 onClick={() => setIsOpen(false)}
               >
-                Enseignants
+                Infrastructures Réseau
               </Link>
               <Link
-                href="/etudiants"
-                className={navLinkClass("/etudiants")}
+                href="/maintenance"
+                className={navLinkClass("/maintenance")}
                 onClick={() => setIsOpen(false)}
               >
-                Étudiants
+                Maintenance IT
               </Link>
               <Link
-                href="/actualites"
-                className={navLinkClass("/actualites")}
+                href="/ventes-equipements"
+                className={navLinkClass("/ventes-equipements")}
                 onClick={() => setIsOpen(false)}
               >
-                Actualités
+                Vente d'Équipements
               </Link>
               <Link
-                href="/ressources"
-                className={navLinkClass("/ressources")}
+                href="/gps"
+                className={navLinkClass("/gps")}
                 onClick={() => setIsOpen(false)}
               >
-                Ressources
+                Systèmes GPS
+              </Link>
+              <Link
+                href="/formations"
+                className={navLinkClass("/formations")}
+                onClick={() => setIsOpen(false)}
+              >
+                Formations
               </Link>
               <Link
                 href="/contact"
@@ -173,6 +189,13 @@ export default function Header() {
                 Contact
               </Link>
             </nav>
+            
+            {/* Informations de contact rapides dans le menu mobile */}
+            <div className="mt-6 pt-4 border-t border-gray-200 text-xs text-gray-500">
+              <p>📞 +224 627 421 722</p>
+              <p>✉️ cotechservices.gn@gmail.com</p>
+              <p>📍 Conakry, Guinée</p>
+            </div>
           </div>
         </div>
       )}

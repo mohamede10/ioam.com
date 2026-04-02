@@ -1,61 +1,216 @@
 "use client";
 import Image from "next/image";
-import { GraduationCap, FlaskConical, Globe } from "lucide-react";
+import { useState, useEffect } from "react";
+import { 
+  Code2, 
+  Wifi, 
+  Cpu, 
+  Wrench, 
+  ShoppingCart, 
+  MapPin, 
+  GraduationCap,
+  ChevronRight,
+  Globe,
+  Shield,
+  Clock,
+  Headphones,
+  ChevronLeft,
+  ChevronRight as ChevronRightIcon
+} from "lucide-react";
 
 export default function Home() {
-  // Année actuelle
   const currentYear = new Date().getFullYear();
-  // Exemple : 2025 -> "2025-2026"
-  const academicYear = `${currentYear}-${currentYear + 1}`;
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Images du slider
+  const slides = [
+    {
+      src: "/images/slide/slide (5).jpg",
+      alt: "COTECH SERVICES - Solutions IT innovantes"
+    },
+    {
+      src: "/images/slide/slide (6).jpg",
+      alt: "COTECH SERVICES - Systèmes intelligents IoT"
+    },
+    {
+      src: "/images/slide/slide (7).png",
+      alt: "COTECH SERVICES - Formation et accompagnement"
+    }
+  ];
+
+  // Changement automatique toutes les 5 secondes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  // Navigation manuelle
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  // Services principaux selon votre document
+  const services = [
+    {
+      icon: Code2,
+      title: "Développement Web & Apps",
+      description: "Sites web professionnels, applications de gestion, e-commerce et paiement en ligne.",
+      link: "/services#web"
+    },
+    {
+      icon: Wifi,
+      title: "Réseaux & Sécurité",
+      description: "Installation réseau, Wi-Fi professionnel, vidéosurveillance et sécurité informatique.",
+      link: "/infrastructure-reseau"
+    },
+    {
+      icon: Cpu,
+      title: "Solutions IoT",
+      description: "Systèmes intelligents, domotique, irrigation connectée et prototypage électronique.",
+      link: "/solutions-iot"
+    },
+    {
+      icon: Wrench,
+      title: "Maintenance IT",
+      description: "Maintenance préventive et corrective, réparation, optimisation et support technique.",
+      link: "/maintenance"
+    },
+    {
+      icon: ShoppingCart,
+      title: "Vente d'Équipements",
+      description: "Matériel informatique, accessoires, composants électroniques sur devis.",
+      link: "/ventes-equipements"
+    },
+    {
+      icon: MapPin,
+      title: "Systèmes GPS",
+      description: "Installation GPS, suivi de flotte en temps réel et géolocalisation.",
+      link: "/gps"
+    }
+  ];
+
+  // Avantages selon votre document
+  const avantages = [
+    {
+      icon: Shield,
+      title: "Expertise technique",
+      description: "Un seul interlocuteur pour tous vos besoins IT"
+    },
+    {
+      icon: Globe,
+      title: "Solutions locales",
+      description: "Adaptées au contexte africain et aux contraintes locales"
+    },
+    {
+      icon: Clock,
+      title: "Support réactif",
+      description: "Assistance rapide et disponible"
+    },
+    {
+      icon: Headphones,
+      title: "Accompagnement personnalisé",
+      description: "Solutions sur mesure et suivi dédié"
+    }
+  ];
 
   return (
     <main>
-      {/* Hero */}
-      <section className="relative w-full h-[70vh] flex items-center justify-center text-center">
-        {/* Image de fond */}
-        <Image
-          src="/images/ioam_header_slide3.png"
-          alt="IOAM Banner"
-          fill
-          className="object-cover brightness-75 blu"
-          priority
-        />
+      {/* Hero Section avec Slider */}
+      <section className="relative w-full h-[70vh] overflow-hidden">
+        {/* Images du slider */}
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              className="object-cover brightness-75"
+              priority={index === 0}
+            />
+          </div>
+        ))}
+
+        {/* Boutons de navigation */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition"
+        >
+          <ChevronRightIcon className="h-6 w-6" />
+        </button>
+
+        {/* Indicateurs (dots) */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`transition-all h-2 rounded-full ${
+                index === currentSlide
+                  ? "w-8 bg-white"
+                  : "w-2 bg-white/50 hover:bg-white/75"
+              }`}
+            />
+          ))}
+        </div>
+
         {/* Contenu */}
-        <div className="relative z-10 max-w-3xl px-4">
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white drop-shadow-lg">
-            Bienvenue à l’Institut Ouest Africain de Mathématiques
-          </h1>
-          <p className="mt-4 text-base sm:text-lg text-gray-100 drop-shadow">
-            L’IOAM forme une nouvelle génération de chercheurs et d’enseignants
-            en mathématiques pour renforcer l’excellence scientifique en Afrique de l’Ouest.
-          </p>
-          <div className="mt-6 flex justify-center gap-3">
-            <a
-              href="/appel"
-              className="px-5 py-2 bg-blue-900 text-white rounded-lg shadow hover:opacity-90 text-sm sm:text-base"
-            >
-              Voir l’appel à candidature {academicYear}
-            </a>
-            <a
-              href="/appel"
-              className="px-5 py-2 border border-white text-white rounded-lg hover:bg-white hover:text-blue-900 text-sm sm:text-base"
-            >
-              En savoir plus
-            </a>
+        <div className="relative z-10 h-full flex items-center justify-center text-center">
+          <div className="max-w-3xl px-4">
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-white drop-shadow-lg">
+              COTECH SERVICES
+            </h1>
+            <p className="mt-4 text-xl sm:text-2xl text-white drop-shadow font-semibold">
+              Solutions IT & Systèmes Intelligents
+            </p>
+            <p className="mt-4 text-base sm:text-lg text-gray-100 drop-shadow">
+              Entreprise multiservices spécialisée dans les technologies de l'information,
+              les solutions numériques et les systèmes intelligents pour l'Afrique.
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <a
+                href="/contact"
+                className="px-6 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-blue-800 transition text-sm sm:text-base"
+              >
+                Demander un devis
+              </a>
+              <a
+                href="/services"
+                className="px-6 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-900 transition text-sm sm:text-base"
+              >
+                Nos services
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Présentation rapide */}
       <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-        {/* Personnage à gauche */}
+        {/* Image à gauche */}
         <div className="flex justify-center">
           <Image
-            src="/images/a.jpg"
-            alt="Personnage IOAM"
-            width={100}
-            height={100}
-            className="object-contain"
+            src="/images/cotech-about.jpg"
+            alt="COTECH SERVICES - Innovation technologique"
+            width={500}
+            height={400}
+            className="rounded-lg shadow-lg object-cover"
           />
         </div>
 
@@ -64,119 +219,207 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
             Qui sommes-nous ?
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            L’Institut Ouest Africain de Mathématiques (IOAM) est dédié à
-            l’excellence dans l’enseignement et la recherche en sciences
-            mathématiques et appliquées. Nous formons la prochaine génération
-            d’innovateurs et de leaders pour l’Afrique et le monde.
+          <p className="text-gray-700 leading-relaxed mb-4">
+            <span className="font-semibold">COTECH SERVICES</span> est une entreprise multiservices 
+            spécialisée dans les technologies de l'information (IT), les solutions numériques, 
+            les systèmes intelligents (IoT), la maintenance matérielle et logicielle.
           </p>
-          <button className="px-6 py-3 bg-blue-900 text-white rounded-lg shadow hover:opacity-90">
-            <a href="/about">En savoir plus</a>
-          </button>
-        </div>
-      </section>
-
-      {/* Pourquoi IOAM */}
-      <section className="py-10 max-w-6xl mx-auto px-4">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center text-blue-900">
-          Pourquoi choisir l’IOAM ?
-        </h2>
-        <div className="mt-6 grid sm:grid-cols-3 gap-5">
-          {/* Carte 1 */}
-          <div className="bg-white p-5 rounded-lg shadow text-center">
-            <GraduationCap className="mx-auto h-10 w-10 text-blue-900 mb-3" />
-            <h3 className="text-lg font-semibold text-blue-900">
-              Programmes de qualité
-            </h3>
-            <p className="mt-2 text-gray-600 text-sm">
-              Masters et Doctorats encadrés par des enseignants-chercheurs de renom.
-            </p>
-          </div>
-
-          {/* Carte 2 */}
-          <div className="bg-white p-5 rounded-lg shadow text-center">
-            <FlaskConical className="mx-auto h-10 w-10 text-blue-900 mb-3" />
-            <h3 className="text-lg font-semibold text-blue-900">
-              Recherche active
-            </h3>
-            <p className="mt-2 text-gray-600 text-sm">
-              Des laboratoires innovants avec des projets régionaux et internationaux.
-            </p>
-          </div>
-
-          {/* Carte 3 */}
-          <div className="bg-white p-5 rounded-lg shadow text-center">
-            <Globe className="mx-auto h-10 w-10 text-blue-900 mb-3" />
-            <h3 className="text-lg font-semibold text-blue-900">
-              Partenariats
-            </h3>
-            <p className="mt-2 text-gray-600 text-sm">
-              Un réseau solide d’universités et d’institutions prestigieuses.
-            </p>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            Nous proposons des services professionnels adaptés aux particuliers, entreprises, 
+            institutions et organisations souhaitant moderniser leurs infrastructures technologiques.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+            <a
+              href="/about"
+              className="px-6 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-blue-800 transition"
+            >
+              En savoir plus
+            </a>
+            <a
+              href="/contact"
+              className="px-6 py-3 border border-blue-900 text-blue-900 rounded-lg hover:bg-blue-50 transition"
+            >
+              Nous contacter
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Actualités */}
-      <section className="py-10 bg-gray-100 px-4">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center text-blue-900">
-          Actualités récentes
+      {/* Services */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
+              Nos domaines d'expertise
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Des solutions technologiques complètes adaptées à vos besoins
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div 
+                  key={index}
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition group"
+                >
+                  <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-900 transition">
+                    <Icon className="h-7 w-7 text-blue-900 group-hover:text-white transition" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {service.description}
+                  </p>
+                  <a 
+                    href={service.link}
+                    className="text-blue-900 font-medium inline-flex items-center gap-1 hover:gap-2 transition"
+                  >
+                    En savoir plus <ChevronRight className="h-4 w-4" />
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Pourquoi choisir COTECH SERVICES */}
+      <section className="py-16 max-w-7xl mx-auto px-4">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-12">
+          Pourquoi choisir COTECH SERVICES ?
         </h2>
-        <div className="mt-6 grid sm:grid-cols-3 gap-5 max-w-6xl mx-auto">
-          {/* Actu 1 */}
-          <div className="bg-white rounded-lg shadow overflow-hidden hover:shadow-md transition">
-            <Image
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
-              alt="Conférence régionale"
-              width={400}
-              height={200}
-              className="w-full h-40 object-cover"
-            />
-            <div className="p-3">
-              <h3 className="text-base font-semibold text-blue-900">
-                Conférence régionale {currentYear}
-              </h3>
-              <p className="text-gray-600 mt-1 text-sm">
-                Des chercheurs réunis autour des avancées mathématiques.
-              </p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {avantages.map((avantage, index) => {
+            const Icon = avantage.icon;
+            return (
+              <div key={index} className="bg-white p-6 rounded-lg shadow text-center border border-gray-100 hover:shadow-lg transition">
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon className="h-8 w-8 text-blue-900" />
+                </div>
+                <h3 className="text-lg font-semibold text-blue-900 mb-2">
+                  {avantage.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {avantage.description}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Formation & Accompagnement */}
+      <section className="py-16 bg-blue-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <GraduationCap className="h-16 w-16 mx-auto mb-4" />
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Formation & Accompagnement
+          </h2>
+          <p className="text-xl mb-6 max-w-2xl mx-auto">
+            Nous formons la prochaine génération d'experts en technologies numériques
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
+            <div className="bg-blue-800 p-4 rounded-lg">
+              <h4 className="font-semibold mb-2">💻 Bureautique & Internet</h4>
+              <p className="text-sm text-blue-100">Initiation à l'informatique</p>
+            </div>
+            <div className="bg-blue-800 p-4 rounded-lg">
+              <h4 className="font-semibold mb-2">🌐 Développement Web</h4>
+              <p className="text-sm text-blue-100">HTML/CSS, JavaScript, PHP</p>
+            </div>
+            <div className="bg-blue-800 p-4 rounded-lg">
+              <h4 className="font-semibold mb-2">🔧 Réseaux & IoT</h4>
+              <p className="text-sm text-blue-100">Administration, Arduino, capteurs</p>
             </div>
           </div>
-
-          {/* Actu 2 */}
-          <div className="bg-white rounded-lg shadow overflow-hidden hover:shadow-md transition">
-            <Image
-              src="https://images.unsplash.com/photo-1529070538774-1843cb3265df"
-              alt="Partenariat universitaire"
-              width={400}
-              height={200}
-              className="w-full h-40 object-cover"
-            />
-            <div className="p-3">
-              <h3 className="text-base font-semibold text-blue-900">
-                Nouveaux partenariats
-              </h3>
-              <p className="text-gray-600 mt-1 text-sm">
-                Accord signé avec l’Université Paris-Saclay.
-              </p>
-            </div>
+          <div className="mt-8">
+            <a
+              href="/formations"
+              className="px-6 py-3 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-100 transition"
+            >
+              Découvrir nos formations
+            </a>
           </div>
+        </div>
+      </section>
 
-          {/* Actu 3 */}
-          <div className="bg-white rounded-lg shadow overflow-hidden hover:shadow-md transition">
-            <Image
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Admissions IOAM"
-              width={400}
-              height={200}
-              className="w-full h-40 object-cover"
-            />
-            <div className="p-3">
-              <h3 className="text-base font-semibold text-blue-900">
-                Admissions ouvertes
+      {/* Contact et horaires */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Informations de contact */}
+            <div>
+              <h2 className="text-3xl font-bold text-blue-900 mb-6">
+                Contactez-nous
+              </h2>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-100 p-2 rounded-full">
+                    <MapPin className="h-5 w-5 text-blue-900" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Adresse</p>
+                    <p className="text-gray-600">Conakry, Guinée</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-100 p-2 rounded-full">
+                    <Headphones className="h-5 w-5 text-blue-900" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Téléphone / WhatsApp</p>
+                    <p className="text-gray-600">+224 627 421 722 / +224 610 093 485</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-100 p-2 rounded-full">
+                    <Globe className="h-5 w-5 text-blue-900" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Email</p>
+                    <p className="text-gray-600">cotechservices.gn@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-100 p-2 rounded-full">
+                    <Clock className="h-5 w-5 text-blue-900" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Horaires</p>
+                    <p className="text-gray-600">Lun-Ven: 8h00-18h00 | Sam: 9h00-13h00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Zone d'intervention */}
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-bold text-blue-900 mb-4">
+                Zone d'intervention
               </h3>
-              <p className="text-gray-600 mt-1 text-sm">
-                Lancement officiel de l’appel à candidatures {academicYear}.
-              </p>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center border-b pb-2">
+                  <span className="font-semibold">Prestations à distance :</span>
+                  <span className="text-gray-600">Partout (support téléphonique, visioconférence)</span>
+                </div>
+                <div className="flex justify-between items-center border-b pb-2">
+                  <span className="font-semibold">Interventions sur site :</span>
+                  <span className="text-gray-600">Conakry</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold">Projets spécifiques :</span>
+                  <span className="text-gray-600">Étude au cas par cas</span>
+                </div>
+              </div>
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                <p className="text-center text-blue-900 font-semibold">
+                  📞 Disponible sur WhatsApp : +224 610 093 485
+                </p>
+              </div>
             </div>
           </div>
         </div>
