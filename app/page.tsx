@@ -398,7 +398,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold">Téléphone / WhatsApp</p>
-                    <p className="text-gray-600">+224 627 421 722 / +224 610 093 485</p>
+                    <p className="text-gray-600">+224 628 811 827 / +224 610 093 485</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -444,7 +444,7 @@ export default function Home() {
                 <a
                   href="https://wa.me/224610093485?text=Bonjour%20COTECH%20SERVICES%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services.%20Pouvez-vous%20me%20renseigner%20%3F%0A%0A--Source--%0A%20Message%20envoy%C3%A9%20depuis%20mon%20site%20web%20cotechservices.com"
                 >
-                  Disponible sur WhatsApp : +224 610 093 485
+                  WhatsApp : +224 610 093 485
                 </a>
               </div>
             </div>

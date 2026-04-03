@@ -205,7 +205,7 @@ export default function Header() {
             
             {/* Informations de contact rapides dans le menu mobile - Version compacte */}
             <div className="mt-4 pt-3 border-t border-gray-200 text-xs text-gray-500 space-y-1">
-              <p className="flex items-center gap-2">+224 627 421 722/610 093 485</p>
+              <p className="flex items-center gap-2">+224 628 811 827/610 093 485</p>
               <p className="flex items-center gap-2">cotechservices.gn@gmail.com</p>
               <p className="flex items-center gap-2">Conakry, Guinée</p>
             </div>

@@ -466,7 +466,7 @@ export default function About() {
             
             {/* Téléphone et email */}
             <div className="mt-6 text-white/70 text-sm">
-              <p> +224 627 421 722 / 610 093 485 | cotechservices.gn@gmail.com</p>
+              <p> +224 628 811 827 / 610 093 485 | cotechservices.gn@gmail.com</p>
             </div>
           </div>
         </div>

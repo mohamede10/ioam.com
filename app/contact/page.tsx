@@ -69,7 +69,7 @@ export default function Contact() {
                   <div>
                     <p className="font-medium">Téléphone</p>
                     <a href="tel:+224627421722" className="text-sm hover:text-blue-900 transition">
-                      +224 627 421 722
+                      +224 628 811 827
                     </a>
                   </div>
                 </div>
@@ -335,7 +335,7 @@ export default function Contact() {
           </div>
           
           <div className="mt-8 text-blue-100 text-sm">
-            <p> +224 627 421 722 / +224 610 093 485 | cotechservices.gn@gmail.com</p>
+            <p> +224 628 811 827 / +224 610 093 485 | cotechservices.gn@gmail.com</p>
           </div>
         </div>
       </section>
