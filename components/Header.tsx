@@ -26,7 +26,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo + texte ensemble */}
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo/logo.png" alt="Logo COTECH SERVICES" width={75} height={75} />
+          <Image src="/images/logo/logo.png" alt="Logo COTECH SERVICES" width={100} height={100} />
           <div className="flex-col hidden sm:flex">
             <span className="font-bold text-blue-900 text-sm sm:text-base">
               COTECH SERVICES
@@ -40,7 +40,8 @@ export default function Header() {
         {/* Bouton burger (mobile) */}
         <button
           onClick={() => setIsOpen(true)}
-          className="sm:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100"
+          className="sm:hidden p-4 rounded-xl black hover:bg-black text-3xl font-bold w-14 h-14 flex items-center justify-center"
+          aria-label="Menu"
         >
           ☰
         </button>
@@ -108,93 +109,105 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Menu mobile (modal) */}
+      {/* Menu mobile (modal) - Version compacte */}
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg w-5/6 max-w-sm p-6 relative">
+          <div className="bg-white rounded-lg w-5/6 max-w-sm p-4 relative">
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-3 right-3 text-gray-600 text-2xl"
+              className="absolute top-2 right-2 text-gray-600 text-2xl hover:text-gray-900"
             >
               ✕
             </button>
-            <nav className="flex flex-col gap-4 text-lg font-medium text-gray-700 mt-6">
-              <Link href="/" className={navLinkClass("/")} onClick={() => setIsOpen(false)}>
+            <nav className="flex flex-col gap-2 text-base font-medium text-gray-700 mt-4 max-h-[80vh] overflow-y-auto">
+              <Link 
+                href="/" 
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors" 
+                onClick={() => setIsOpen(false)}
+              >
                 Accueil
               </Link>
-              <Link href="/about" className={navLinkClass("/about")} onClick={() => setIsOpen(false)}>
+              <Link 
+                href="/about" 
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors" 
+                onClick={() => setIsOpen(false)}
+              >
                 À propos
               </Link>
               <Link
                 href="/services"
-                className={navLinkClass("/services")}
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Services
               </Link>
               <Link
                 href="/projets"
-                className={navLinkClass("/projets")}
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Projets
               </Link>
+              
+              {/* Séparateur */}
+              <div className="border-t border-gray-200 my-2"></div>
+              
               <Link
                 href="/solutions-iot"
-                className={navLinkClass("/solutions-iot")}
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                Solutions IoT
+                🔹 Solutions IoT
               </Link>
               <Link
                 href="/infrastructure-reseau"
-                className={navLinkClass("/infrastructure-reseau")}
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                Infrastructures Réseau
+                🔹 Infrastructures Réseau
               </Link>
               <Link
                 href="/maintenance"
-                className={navLinkClass("/maintenance")}
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                Maintenance IT
+                🔹 Maintenance IT
               </Link>
               <Link
                 href="/ventes-equipements"
-                className={navLinkClass("/ventes-equipements")}
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                Vente d'Équipements
+                🔹 Vente d'Équipements
               </Link>
               <Link
                 href="/gps"
-                className={navLinkClass("/gps")}
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                Systèmes GPS
+                🔹 Systèmes GPS
               </Link>
               <Link
                 href="/formations"
-                className={navLinkClass("/formations")}
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                Formations
+                🔹 Formations
               </Link>
               <Link
                 href="/contact"
-                className={navLinkClass("/contact")}
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                Contact
+                🔹 Contact
               </Link>
             </nav>
             
-            {/* Informations de contact rapides dans le menu mobile */}
-            <div className="mt-6 pt-4 border-t border-gray-200 text-xs text-gray-500">
-              <p>📞 +224 627 421 722</p>
-              <p>✉️ cotechservices.gn@gmail.com</p>
-              <p>📍 Conakry, Guinée</p>
+            {/* Informations de contact rapides dans le menu mobile - Version compacte */}
+            <div className="mt-4 pt-3 border-t border-gray-200 text-xs text-gray-500 space-y-1">
+              <p className="flex items-center gap-2">+224 627 421 722/610 093 485</p>
+              <p className="flex items-center gap-2">cotechservices.gn@gmail.com</p>
+              <p className="flex items-center gap-2">Conakry, Guinée</p>
             </div>
           </div>
         </div>
