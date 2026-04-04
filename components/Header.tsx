@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -295,11 +296,7 @@ export default function Header() {
             </nav>
             
             {/* Informations de contact rapides dans le menu mobile - Version compacte */}
-            <div className="mt-4 pt-3 border-t border-gray-200 text-xs text-gray-500 space-y-1">
-              <p className="flex items-center gap-2">📞 +224 628 811 827 / +224 610 093 485</p>
-              <p className="flex items-center gap-2">✉️ cotechservices.gn@gmail.com</p>
-              <p className="flex items-center gap-2">📍 Conakry, Guinée</p>
-            </div>
+            <SocialLinks variant="light" showContact={true} />
           </div>
         </div>
       )}
