@@ -6,8 +6,8 @@ import { Lock, Mail, Eye, EyeOff } from "lucide-react";
 export default function AdminLogin() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("admin@cotechservices.com");
-  const [password, setPassword] = useState("admin123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -16,20 +16,10 @@ export default function AdminLogin() {
     setLoading(true);
     setError("");
     
-    // Simulation de connexion (à remplacer par votre API)
+    // Pour le test, accepter les identifiants par défaut
     if (email === "admin@cotechservices.com" && password === "admin123") {
-      // Créer un token simple pour la session
-      const fakeToken = btoa(JSON.stringify({ email, exp: Date.now() + 86400000 }));
-      
-      // Stocker dans localStorage
-      localStorage.setItem("adminLoggedIn", "true");
-      localStorage.setItem("adminToken", fakeToken);
-      
-      // Stocker dans un cookie pour le middleware
       document.cookie = "admin_logged_in=true; path=/; max-age=86400";
-      document.cookie = `admin_token=${fakeToken}; path=/; max-age=86400`;
-      
-      // Rediriger vers le dashboard
+      localStorage.setItem("adminLoggedIn", "true");
       router.push("/admin");
     } else {
       setError("Email ou mot de passe incorrect");
@@ -64,7 +54,7 @@ export default function AdminLogin() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
+                className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-900"
                 placeholder="admin@cotechservices.com"
               />
             </div>
@@ -79,7 +69,7 @@ export default function AdminLogin() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-12 py-2 border rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900"
+                className="w-full pl-10 pr-12 py-2 border rounded-lg focus:ring-2 focus:ring-blue-900"
                 placeholder="••••••••"
               />
               <button
