@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import SocialLinks from "@/components/SocialLinks";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +20,17 @@ export default function Header() {
     pathname === path
       ? "text-blue-900 font-semibold bg-gray-100 block px-4 py-2"
       : "text-gray-700 hover:text-blue-900 hover:bg-gray-50 block px-4 py-2";
+
+  // Réseaux sociaux
+  const socialLinks = [
+    { name: "Facebook", url: "https://facebook.com/cotechservices", icon: "📘" },
+    { name: "WhatsApp", url: "https://wa.me/224610093485?text=Bonjour%20COTECH%20SERVICES", icon: "💬" },
+    { name: "LinkedIn", url: "https://linkedin.com/company/cotechservices", icon: "🔗" },
+    { name: "Twitter", url: "https://twitter.com/cotechservices", icon: "🐦" },
+    { name: "Instagram", url: "https://instagram.com/cotechservices", icon: "📷" },
+    { name: "TikTok", url: "https://tiktok.com/@cotechservices", icon: "🎵" },
+    { name: "YouTube", url: "https://youtube.com/@cotechservices", icon: "▶️" }
+  ];
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -295,8 +305,29 @@ export default function Header() {
               </Link>
             </nav>
             
-            {/* Informations de contact rapides dans le menu mobile - Version compacte */}
-            <SocialLinks variant="light" showContact={true} />
+            {/* Réseaux sociaux dans le menu mobile */}
+            <div className="mt-6 pt-4 border-t border-gray-200">
+              <p className="text-xs text-gray-500 text-center mb-3">Suivez-nous</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-100 hover:bg-blue-200 p-2 rounded-full transition-all duration-300 hover:scale-110"
+                    aria-label={social.name}
+                  >
+                    <span className="text-blue-700 text-lg">{social.icon}</span>
+                  </a>
+                ))}
+              </div>
+              <div className="mt-4 text-center text-xs text-gray-400 space-y-1">
+                <p>+224 628 811 827 / +224 610 093 485</p>
+                <p>cotechservices.gn@gmail.com</p>
+                <p>Conakry, Guinée</p>
+              </div>
+            </div>
           </div>
         </div>
       )}
