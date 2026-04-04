@@ -1,0 +1,329 @@
+"use client";
+import SocialLinks from "@/components/SocialLinks";
+import Image from "next/image";
+import Link from "next/link";
+import { 
+  Cloud, 
+  Database, 
+  Shield, 
+  Server, 
+  Zap,
+  Globe,
+  CheckCircle,
+  ArrowRight,
+  Users,
+  Clock,
+  Award,
+  HardDrive,
+  Upload,
+  Download
+} from "lucide-react";
+
+export default function ServiceCloudDetail() {
+  const services = [
+    {
+      title: "Hébergement Web",
+      description: "Solutions d'hébergement performantes pour vos sites",
+      icon: Globe,
+      features: ["Hébergement mutualisé", "Serveur dédié", "SSL gratuit", "Sauvegarde automatique"]
+    },
+    {
+      title: "Stockage Cloud",
+      description: "Espace de stockage sécurisé accessible partout",
+      icon: HardDrive,
+      features: ["Stockage illimité", "Synchronisation multi-appareils", "Partage de fichiers", "Versioning"]
+    },
+    {
+      title: "Migration Cloud",
+      description: "Accompagnement dans votre migration vers le cloud",
+      icon: Upload,
+      features: ["Analyse pré-migration", "Plan de migration", "Transfert sécurisé", "Formation équipes"]
+    },
+    {
+      title: "Sauvegarde Automatisée",
+      description: "Protégez vos données avec des sauvegardes automatiques",
+      icon: Database,
+      features: ["Sauvegarde quotidienne", "Restauration rapide", "Stockage sécurisé", "Plan de reprise"]
+    }
+  ];
+
+  const offres = [
+    { name: "Basic", storage: "50 Go", price: "30 000 GNF/mois", color: "bg-blue-100 text-blue-800" },
+    { name: "Pro", storage: "200 Go", price: "75 000 GNF/mois", color: "bg-green-100 text-green-800" },
+    { name: "Business", storage: "1 To", price: "150 000 GNF/mois", color: "bg-purple-100 text-purple-800" },
+    { name: "Enterprise", storage: "Illimité", price: "Sur devis", color: "bg-orange-100 text-orange-800" }
+  ];
+
+  const etapes = [
+    { 
+      num: "1", 
+      title: "Analyse", 
+      description: "Évaluation de vos besoins",
+      icon: Users
+    },
+    { 
+      num: "2", 
+      title: "Configuration", 
+      description: "Mise en place de l'infrastructure",
+      icon: Server
+    },
+    { 
+      num: "3", 
+      title: "Migration", 
+      description: "Transfert de vos données",
+      icon: Download
+    },
+    { 
+      num: "4", 
+      title: "Support", 
+      description: "Assistance continue",
+      icon: Shield
+    }
+  ];
+
+  return (
+    <main>
+      {/* Hero Section */}
+      <section className="relative w-full h-[50vh] flex items-center justify-center text-center">
+        <Image
+          src="/images/services/cloud-hero.jpg"
+          alt="Cloud & Hébergement"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+        <div className="relative z-10 max-w-3xl px-4">
+          <div className="bg-blue-900/20 backdrop-blur-sm inline-block p-3 rounded-full mb-4">
+            <Cloud className="h-12 w-12 text-white" />
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+            Cloud & Hébergement
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-200">
+            Solutions cloud performantes et sécurisées pour votre entreprise
+          </p>
+        </div>
+      </section>
+
+      {/* Description principale */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-blue-900 mb-4">
+                Passez au cloud en toute sérénité
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Chez <span className="font-semibold text-blue-900">COTECH SERVICES</span>, nous proposons des 
+                solutions cloud adaptées à vos besoins et à votre budget.
+              </p>
+              <p className="text-gray-600 mb-6">
+                Que vous ayez besoin d'héberger votre site web, de stocker vos données 
+                en toute sécurité, ou de migrer votre infrastructure vers le cloud, 
+                notre équipe vous accompagne à chaque étape.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact" className="px-6 py-3 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 transition">
+                  Commencer maintenant
+                </Link>
+                <Link href="#services" className="px-6 py-3 border border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-50 transition">
+                  Nos offres
+                </Link>
+              </div>
+            </div>
+            <div className="relative h-[300px] rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="/images/services/cloud-detail.jpg"
+                alt="Solutions cloud"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services détaillés */}
+      <section id="services" className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
+              Nos solutions cloud
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Des prestations adaptées à tous vos besoins
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition group">
+                  <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-900 transition">
+                    <Icon className="h-7 w-7 text-blue-900 group-hover:text-white transition" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm">
+                        <CheckCircle className="h-4 w-4 text-blue-900" />
+                        <span className="text-gray-600">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Offres */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
+              Nos offres d'hébergement
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Des formules adaptées à tous les besoins
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {offres.map((offre, index) => (
+              <div key={index} className="text-center p-6 border rounded-xl hover:shadow-lg transition">
+                <div className="text-xl font-bold text-blue-900 mb-2">{offre.name}</div>
+                <div className="text-2xl font-bold text-gray-900 mb-2">{offre.storage}</div>
+                <div className="text-gray-600 mb-4">{offre.price}</div>
+                <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${offre.color}`}>
+                  Populaire
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Processus */}
+      <section className="py-16 bg-blue-900 text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Notre méthodologie
+            </h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              Un accompagnement structuré pour votre migration
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {etapes.map((etape, index) => {
+              const Icon = etape.icon;
+              return (
+                <div key={index} className="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
+                  <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                    {etape.num}
+                  </div>
+                  <Icon className="h-8 w-8 mx-auto mb-3" />
+                  <h3 className="text-xl font-semibold mb-2">{etape.title}</h3>
+                  <p className="text-blue-100 text-sm">{etape.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Avantages */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">
+            Pourquoi choisir nos solutions cloud ?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-blue-900" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Sécurité maximale</h3>
+              <p className="text-gray-600">Données chiffrées et protégées</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="h-8 w-8 text-blue-900" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Haute disponibilité</h3>
+              <p className="text-gray-600">99.9% de disponibilité garantie</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-blue-900" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Support 24/7</h3>
+              <p className="text-gray-600">Assistance technique réactive</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Témoignage */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="bg-blue-100 w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0">
+                <Users className="h-12 w-12 text-blue-900" />
+              </div>
+              <div className="text-center md:text-left">
+                <div className="flex justify-center md:justify-start gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 text-lg italic mb-4">
+                  "COTECH SERVICES nous a accompagnés dans notre migration vers le cloud. 
+                  Le processus a été fluide, sécurisé, et leur support est toujours disponible. 
+                  Nous recommandons vivement leurs services !"
+                </p>
+                <p className="font-bold text-blue-900">Alpha Condé</p>
+                <p className="text-gray-500 text-sm">Responsable IT, Société B</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h2 className="text-3xl font-bold mb-4">
+            Prêt à passer au cloud ?
+          </h2>
+          <p className="text-xl mb-8">
+            Contactez-nous pour une solution sur mesure
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center mb-8">
+            <Link
+              href="/contact"
+              className="px-8 py-3 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-100 transition"
+            >
+              Commencer maintenant
+            </Link>
+            <Link
+              href="/services"
+              className="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition"
+            >
+              Voir tous nos services
+            </Link>
+          </div>
+          <SocialLinks variant="light" showContact={true} />
+        </div>
+      </section>
+    </main>
+  );
+}

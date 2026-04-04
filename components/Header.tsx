@@ -26,7 +26,13 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo + texte ensemble */}
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo/logo.png" alt="Logo COTECH SERVICES" width={100} height={100} />
+          <Image 
+            src="/images/logo/logo.png" 
+            alt="Logo COTECH SERVICES" 
+            width={100} 
+            height={100} 
+            className="w-auto h-auto"
+          />
           <div className="flex-col hidden sm:flex">
             <span className="font-bold text-blue-900 text-sm sm:text-base">
               COTECH SERVICES
@@ -40,7 +46,7 @@ export default function Header() {
         {/* Bouton burger (mobile) */}
         <button
           onClick={() => setIsOpen(true)}
-          className="sm:hidden p-4 rounded-xl black hover:bg-black text-3xl font-bold w-14 h-14 flex items-center justify-center"
+          className="sm:hidden p-4 rounded-xl hover:bg-gray-100 text-3xl font-bold w-14 h-14 flex items-center justify-center"
           aria-label="Menu"
         >
           ☰
@@ -60,19 +66,33 @@ export default function Header() {
           <Link href="/projets" className={navLinkClass("/projets")}>
             Projets
           </Link>
+          <Link href="/formations" className={navLinkClass("/formations")}>
+            Formation
+          </Link>
+          <Link href="/e-shop" className={navLinkClass("/e-shop")}>
+            E-shop
+          </Link>
+          <Link href="/contact" className={navLinkClass("/contact")}>
+            Contact
+          </Link>
 
           {/* Menu déroulant Plus */}
           <div className="relative group">
             <button
               className={`flex items-center gap-1 ${
                 [
-                  "/solutions-iot",
-                  "/infrastructure-reseau",
-                  "/maintenance",
-                  "/ventes-equipements",
-                  "/gps",
-                  "/formations",
-                  "/contact",
+                  "/services/web",
+                  "/services/reseau",
+                  "/services/iot",
+                  "/services/maintenance",
+                  "/services/vente-equipements",
+                  "/services/gps",
+                  "/services/infographie",
+                  "/services/odoo",
+                  "/services/automobile",
+                  "/services/formation",
+                  "/services/conseil",
+                  "/services/cloud"
                 ].includes(pathname)
                   ? "text-blue-900 font-semibold border-b-2 border-blue-900"
                   : "text-gray-700 hover:text-blue-900"
@@ -83,26 +103,41 @@ export default function Header() {
 
             {/* Contenu du menu */}
             <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <Link href="/solutions-iot" className={dropdownLinkClass("/solutions-iot")}>
+              <Link href="/services/web" className={dropdownLinkClass("/services/web")}>
+                Développement Web
+              </Link>
+              <Link href="/services/reseau" className={dropdownLinkClass("/services/reseau")}>
+                Réseaux & Sécurité
+              </Link>
+              <Link href="/services/iot" className={dropdownLinkClass("/services/iot")}>
                 Solutions IoT
               </Link>
-              <Link href="/infrastructure-reseau" className={dropdownLinkClass("/infrastructure-reseau")}>
-                Infrastructures Réseau
-              </Link>
-              <Link href="/maintenance" className={dropdownLinkClass("/maintenance")}>
+              <Link href="/services/maintenance" className={dropdownLinkClass("/services/maintenance")}>
                 Maintenance IT
               </Link>
-              <Link href="/ventes-equipements" className={dropdownLinkClass("/ventes-equipements")}>
+              <Link href="/services/vente-equipements" className={dropdownLinkClass("/services/vente-equipements")}>
                 Vente d'Équipements
               </Link>
-              <Link href="/gps" className={dropdownLinkClass("/gps")}>
+              <Link href="/services/gps" className={dropdownLinkClass("/services/gps")}>
                 Systèmes GPS
               </Link>
-              <Link href="/formations" className={dropdownLinkClass("/formations")}>
-                Formations
+              <Link href="/services/infographie" className={dropdownLinkClass("/services/infographie")}>
+                Infographie & Design
               </Link>
-              <Link href="/contact" className={dropdownLinkClass("/contact")}>
-                Contact
+              <Link href="/services/odoo" className={dropdownLinkClass("/services/odoo")}>
+                Gestion ERP Odoo
+              </Link>
+              <Link href="/services/automobile" className={dropdownLinkClass("/services/automobile")}>
+                Solutions Automobile
+              </Link>
+              <Link href="/services/formation" className={dropdownLinkClass("/services/formation")}>
+                Formation IT
+              </Link>
+              <Link href="/services/conseil" className={dropdownLinkClass("/services/conseil")}>
+                Conseil & Audit IT
+              </Link>
+              <Link href="/services/cloud" className={dropdownLinkClass("/services/cloud")}>
+                Cloud & Hébergement
               </Link>
             </div>
           </div>
@@ -148,66 +183,122 @@ export default function Header() {
               >
                 Projets
               </Link>
+              <Link
+                href="/formations"
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Formation
+              </Link>
+              <Link
+                href="/e-shop"
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                E-shop
+              </Link>
+              <Link
+                href="/contact"
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
               
               {/* Séparateur */}
               <div className="border-t border-gray-200 my-2"></div>
               
               <Link
-                href="/solutions-iot"
+                href="/services/web"
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                🔹 Développement Web
+              </Link>
+              <Link
+                href="/services/reseau"
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                🔹 Réseaux & Sécurité
+              </Link>
+              <Link
+                href="/services/iot"
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
                 🔹 Solutions IoT
               </Link>
               <Link
-                href="/infrastructure-reseau"
-                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
-                onClick={() => setIsOpen(false)}
-              >
-                🔹 Infrastructures Réseau
-              </Link>
-              <Link
-                href="/maintenance"
+                href="/services/maintenance"
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
                 🔹 Maintenance IT
               </Link>
               <Link
-                href="/ventes-equipements"
+                href="/services/vente-equipements"
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
                 🔹 Vente d'Équipements
               </Link>
               <Link
-                href="/gps"
+                href="/services/gps"
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
                 🔹 Systèmes GPS
               </Link>
               <Link
-                href="/formations"
+                href="/services/infographie"
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                🔹 Formations
+                🔹 Infographie & Design
               </Link>
               <Link
-                href="/contact"
+                href="/services/odoo"
                 className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                🔹 Contact
+                🔹 Gestion ERP Odoo
+              </Link>
+              <Link
+                href="/services/automobile"
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                🔹 Solutions Automobile
+              </Link>
+              <Link
+                href="/services/formation"
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                🔹 Formation IT
+              </Link>
+              <Link
+                href="/services/conseil"
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                🔹 Conseil & Audit IT
+              </Link>
+              <Link
+                href="/services/cloud"
+                className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                🔹 Cloud & Hébergement
               </Link>
             </nav>
             
             {/* Informations de contact rapides dans le menu mobile - Version compacte */}
             <div className="mt-4 pt-3 border-t border-gray-200 text-xs text-gray-500 space-y-1">
-              <p className="flex items-center gap-2">+224 628 811 827/610 093 485</p>
-              <p className="flex items-center gap-2">cotechservices.gn@gmail.com</p>
-              <p className="flex items-center gap-2">Conakry, Guinée</p>
+              <p className="flex items-center gap-2">📞 +224 628 811 827 / +224 610 093 485</p>
+              <p className="flex items-center gap-2">✉️ cotechservices.gn@gmail.com</p>
+              <p className="flex items-center gap-2">📍 Conakry, Guinée</p>
             </div>
           </div>
         </div>

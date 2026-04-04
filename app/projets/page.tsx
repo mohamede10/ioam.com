@@ -186,6 +186,27 @@ export default function Projets() {
       ],
       results: "Réduction des vols de 60%",
       link: "#"
+    },
+    {
+      id: 9,
+      title: "Solution de Télémédecine",
+      category: "web",
+      client: "Centre Médical Espoir",
+      description: "Plateforme de consultation médicale à distance avec prise de rendez-vous en ligne.",
+      fullDescription: "Développement d'une solution complète de télémédecine permettant aux patients de consulter des médecins à distance. La plateforme inclut la prise de rendez-vous en ligne, la visioconférence sécurisée, le partage de documents médicaux, et un système de prescription électronique. Intégration avec les systèmes de gestion des cabinets médicaux existants.",
+      image: "/images/projets/telemedecine.jpg",
+      date: "Février 2026",
+      technologies: ["Next.js", "WebRTC", "Node.js", "PostgreSQL", "Agora.io"],
+      features: [
+        "Visioconférence HD sécurisée",
+        "Prise de rendez-vous en ligne",
+        "Partage de documents médicaux",
+        "Prescription électronique",
+        "Paiement en ligne intégré",
+        "Historique des consultations"
+      ],
+      results: "+2000 consultations à distance",
+      link: "#"
     }
   ];
 

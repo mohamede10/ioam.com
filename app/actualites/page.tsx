@@ -1,86 +1,94 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import { Calendar, Eye, ChevronRight } from "lucide-react";
 
 export default function Actualites() {
-  const news = [
+  const actualites = [
     {
       id: 1,
-      title: "Conférence régionale 2025",
-      date: "15 mars 2025",
-      image: "/images/news1.jpg",
-      excerpt: "Chercheurs et étudiants réunis autour des avancées en mathématiques appliquées.",
+      title: "Lancement de nos nouveaux services IoT",
+      excerpt: "COTECH SERVICES propose désormais des solutions IoT innovantes pour l'agriculture et l'industrie.",
+      date: "15 Mars 2026",
+      image: "/images/actualites/iot-launch.jpg",
+      link: "/actualites/iot-launch"
     },
     {
       id: 2,
-      title: "Accord de partenariat avec l’Université Paris-Saclay",
-      date: "02 avril 2025",
-      image: "/images/news2.jpg",
-      excerpt: "Un partenariat stratégique pour renforcer la coopération académique et scientifique.",
+      title: "Partenariat avec les grandes marques informatiques",
+      excerpt: "Nous sommes désormais partenaires officiels de HP, Dell et Lenovo pour la vente d'équipements.",
+      date: "10 Mars 2026",
+      image: "/images/actualites/partenariat.jpg",
+      link: "/actualites/partenariat"
     },
     {
       id: 3,
-      title: "Appel à candidatures 2025-2026",
-      date: "10 mai 2025",
-      image: "/images/news3.jpg",
-      excerpt: "Lancement officiel des inscriptions aux Masters et Doctorats.",
-    },
+      title: "Formation gratuite en développement web",
+      excerpt: "Inscrivez-vous à notre formation gratuite sur les bases du développement web.",
+      date: "5 Mars 2026",
+      image: "/images/actualites/formation.jpg",
+      link: "/actualites/formation"
+    }
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-12">
-      {/* Titre */}
-      <h1 className="text-4xl font-extrabold text-blue-900 mb-8">Actualités & Événements</h1>
-      <p className="text-lg text-gray-700 mb-12">
-        Retrouvez ici toutes les actualités récentes de l’IOAM, les annonces importantes,
-        ainsi que les événements à venir (séminaires, conférences, écoles d’été).
-      </p>
+    <main>
+      {/* Hero Section */}
+      <section className="relative w-full h-[40vh] flex items-center justify-center text-center">
+        <Image
+          src="/images/actualites-banner.jpg"
+          alt="Actualités COTECH SERVICES"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+        <div className="relative z-10 max-w-3xl px-4">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+            Actualités
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-200">
+            Toute l'actualité de COTECH SERVICES
+          </p>
+        </div>
+      </section>
 
       {/* Liste des actualités */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {news.map((item) => (
-          <div
-            key={item.id}
-            className="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden flex flex-col"
-          >
-            <Image
-              src={item.image}
-              alt={item.title}
-              width={400}
-              height={250}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4 flex flex-col flex-1">
-              <span className="text-sm text-gray-500">{item.date}</span>
-              <h3 className="text-lg font-semibold text-blue-900 mt-2">{item.title}</h3>
-              <p className="text-gray-600 mt-2 flex-1">{item.excerpt}</p>
-              <a
-                href="#"
-                className="mt-4 inline-block text-sm font-medium text-blue-900 hover:underline"
-              >
-                Lire plus →
-              </a>
-            </div>
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {actualites.map((article) => (
+              <div key={article.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover hover:scale-105 transition duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                    <Calendar className="h-4 w-4" />
+                    <span>{article.date}</span>
+                  </div>
+                  <h2 className="text-xl font-bold text-gray-900 mb-2">
+                    {article.title}
+                  </h2>
+                  <p className="text-gray-600 mb-4">
+                    {article.excerpt}
+                  </p>
+                  <Link
+                    href={article.link}
+                    className="inline-flex items-center gap-2 text-blue-900 font-semibold hover:gap-3 transition"
+                  >
+                    Lire la suite <ChevronRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-
-      {/* Agenda (exemple simple) */}
-      <section className="mt-16">
-        <h2 className="text-2xl font-bold text-blue-800 mb-6">Agenda des événements</h2>
-        <ul className="divide-y divide-gray-200 bg-white rounded-lg shadow">
-          <li className="p-4 flex justify-between">
-            <span className="font-medium text-gray-700">Séminaire : Mathématiques appliquées à l’IA</span>
-            <span className="text-sm text-gray-500">20 juin 2025</span>
-          </li>
-          <li className="p-4 flex justify-between">
-            <span className="font-medium text-gray-700">École d’été en statistiques</span>
-            <span className="text-sm text-gray-500">5 - 12 août 2025</span>
-          </li>
-          <li className="p-4 flex justify-between">
-            <span className="font-medium text-gray-700">Colloque sur les équations différentielles</span>
-            <span className="text-sm text-gray-500">25 octobre 2025</span>
-          </li>
-        </ul>
+        </div>
       </section>
-    </div>
+    </main>
   );
 }

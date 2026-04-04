@@ -22,7 +22,14 @@ import {
   ChevronLeft,
   ChevronRight,
   Star,
-  User
+  User,
+  Palette,
+  Layout,
+  Car,
+  Briefcase,
+  GraduationCap,
+  Users,
+  HardDrive
 } from "lucide-react";
 
 export default function Services() {
@@ -33,7 +40,7 @@ export default function Services() {
     {
       id: "web",
       icon: Code2,
-      title: "Dév Web & App-Mobile",
+      title: "DévWeb & App-Mobile",
       subtitle: "Solutions numériques sur mesure",
       description: "Création de sites web professionnels et applications de gestion adaptés à vos besoins.",
       features: [
@@ -42,7 +49,8 @@ export default function Services() {
         "Intégration de solutions de paiement en ligne",
         "Maintenance et optimisation de plateformes"
       ],
-      image: "/images/services/web-dev.jpg"
+      image: "/images/services/web-dev.jpg",
+      link: "/services/web"
     },
     {
       id: "reseau",
@@ -56,12 +64,13 @@ export default function Services() {
         "Configuration de routeurs, Firewall, VPN",
         "Installation de vidéosurveillance"
       ],
-      image: "/images/services/network.jpg"
+      image: "/images/services/network.jpg",
+      link: "/services/reseau"
     },
     {
       id: "iot",
       icon: Cpu,
-      title: "Solutions IoT",
+      title: "Systèmes Embarqué & IoT",
       subtitle: "Systèmes intelligents",
       description: "Conception de systèmes automatisés intelligents pour la domotique et l'industrie.",
       features: [
@@ -70,12 +79,13 @@ export default function Services() {
         "Solutions de surveillance intelligente",
         "Prototypage électronique"
       ],
-      image: "/images/services/iot.jpg"
+      image: "/images/services/iot.jpg",
+      link: "/services/iot"
     },
     {
       id: "maintenance",
       icon: Wrench,
-      title: "Maintenance IT",
+      title: "Maintenance Soft & Hard",
       subtitle: "Assistance technique",
       description: "Maintenance préventive et corrective pour vos équipements informatiques.",
       features: [
@@ -84,7 +94,8 @@ export default function Services() {
         "Installation de systèmes d'exploitation",
         "Optimisation des performances"
       ],
-      image: "/images/services/maintenance.jpg"
+      image: "/images/services/maintenance.jpg",
+      link: "/services/maintenance"
     },
     {
       id: "vente",
@@ -98,13 +109,14 @@ export default function Services() {
         "Conseil et accompagnement",
         "Vente sur devis"
       ],
-      image: "/images/services/sales.jpg"
+      image: "/images/services/sales.jpg",
+      link: "/services/vente"
     },
     {
       id: "gps",
       icon: MapPin,
       title: "Systèmes GPS",
-      subtitle: "Suivi de flotte",
+      subtitle: "Suivi de flotte et colis",
       description: "Installation de dispositifs GPS pour le suivi de véhicules et de flottes.",
       features: [
         "Installation de dispositifs GPS",
@@ -112,7 +124,98 @@ export default function Services() {
         "Assistance technique",
         "Alertes personnalisées"
       ],
-      image: "/images/services/gps.jpg"
+      image: "/images/services/gps.jpg",
+      link: "/services/gps"
+    },
+    {
+      id: "infographie",
+      icon: Palette,
+      title: "Infographie & Design",
+      subtitle: "Création visuelle",
+      description: "Conception de supports visuels professionnels pour votre communication.",
+      features: [
+        "Création de logos et chartes graphiques",
+        "Design d'affiches et flyers",
+        "Montage vidéo et motion design",
+        "Retouche photo et illustrations"
+      ],
+      image: "/images/services/infographie.jpg",
+      link: "/services/infographie"
+    },
+    {
+      id: "odoo",
+      icon: Layout,
+      title: "Gestion ERP Odoo",
+      subtitle: "ERP sur mesure",
+      description: "Installation, configuration et personnalisation d'Odoo pour votre entreprise.",
+      features: [
+        "Installation et déploiement Odoo",
+        "Personnalisation des modules",
+        "Formation utilisateurs",
+        "Maintenance et support"
+      ],
+      image: "/images/services/odoo.jpg",
+      link: "/services/odoo"
+    },
+    {
+      id: "automobile",
+      icon: Car,
+      title: "Solutions Automobile",
+      subtitle: "Informatique embarquée",
+      description: "Services informatiques spécialisés pour l'industrie automobile.",
+      features: [
+        "Diagnostic électronique automobile",
+        "Programmation calculateurs",
+        "Installation systèmes embarqués",
+        "Maintenance équipements"
+      ],
+      image: "/images/services/automobile.jpg",
+      link: "/services/automobile"
+    },
+    {
+      id: "formation",
+      icon: GraduationCap,
+      title: "Formation IT",
+      subtitle: "Montée en compétences",
+      description: "Formations professionnelles en informatique pour particuliers et entreprises.",
+      features: [
+        "Initiation à l'informatique",
+        "Développement web (HTML/CSS, JS, PHP)",
+        "Réseaux et sécurité informatique",
+        "Électronique et IoT (Arduino, ESP32)"
+      ],
+      image: "/images/services/formation.jpg",
+      link: "/services/formation"
+    },
+    {
+      id: "conseil",
+      icon: Users,
+      title: "Conseil & Audit IT",
+      subtitle: "Expertise stratégique",
+      description: "Accompagnement stratégique pour optimiser votre système d'information.",
+      features: [
+        "Audit de sécurité informatique",
+        "Consultance en transformation digitale",
+        "Architecture des systèmes d'information",
+        "Stratégie cloud et infrastructure"
+      ],
+      image: "/images/services/conseil.jpg",
+      link: "/services/conseil"
+    },
+    {
+      id: "cloud",
+      icon: Cloud,
+      title: "Cloud & Hébergement",
+      subtitle: "Solutions cloud",
+      description: "Services d'hébergement et solutions cloud pour votre entreprise.",
+      features: [
+        "Hébergement de sites web",
+        "Solutions de stockage cloud",
+        "Migration vers le cloud",
+        "Sauvegarde automatisée"
+      ],
+      image: "/images/services/cloud.jpg",
+      link: "/services/cloud"
     }
   ];
 
@@ -270,10 +373,10 @@ export default function Services() {
                     </ul>
                     
                     <a
-                      href={`/contact?service=${service.id}`}
+                      href={service.link}
                       className="inline-flex items-center gap-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition text-sm w-full justify-center"
                     >
-                      Demander un devis <ArrowRight className="h-4 w-4" />
+                      En savoir plus <ArrowRight className="h-4 w-4" />
                     </a>
                   </div>
                 </div>
@@ -343,7 +446,13 @@ export default function Services() {
               { name: "Hostinger", icon: "☁️" },
               { name: "Docker", icon: "🐳" },
               { name: "Git", icon: "📦" },
-              { name: "Jenkins", icon: "🤖" }
+              { name: "Jenkins", icon: "🤖" },
+              { name: "Photoshop", icon: "🎨" },
+              { name: "Illustrator", icon: "✏️" },
+              { name: "Premiere Pro", icon: "🎬" },
+              { name: "AWS", icon: "☁️" },
+              { name: "Azure", icon: "☁️" },
+              { name: "Google Cloud", icon: "☁️" }
             ].map((tech, index) => (
               <div key={index} className="text-center p-4 border rounded-lg hover:shadow-md transition hover:border-blue-300 group">
                 <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{tech.icon}</div>

@@ -111,40 +111,41 @@ export default function Contact() {
                     <p className="text-sm">Lun-Ven: 8h00-18h00 | Samedi: 9h00-13h00</p>
                   </div>
                 </div>
-
+                {/* Facebook */}
                 <div className="flex items-center gap-3 text-gray-700 p-3 bg-white rounded-lg">
-                  <Clock className="text-blue-900 w-5 h-5 flex-shrink-0" />
+                  <Facebook className="text-blue-900 w-5 h-5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Horaires</p>
-                    <p className="text-sm">Lun-Ven: 8h00-18h00 | Samedi: 9h00-13h00</p>
+                    <p className="font-medium">Facebook</p>
+                    <a href="https://facebook.com/cotechservices" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-blue-900 transition">
+                      @cotechservices
+                    </a>
                   </div>
                 </div>
-
+                {/* LinkedIn */}
                 <div className="flex items-center gap-3 text-gray-700 p-3 bg-white rounded-lg">
-                  <Clock className="text-blue-900 w-5 h-5 flex-shrink-0" />
+                  <Linkedin className="text-blue-900 w-5 h-5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">Horaires</p>
-                    <p className="text-sm">Lun-Ven: 8h00-18h00 | Samedi: 9h00-13h00</p>
+                    <p className="font-medium">LinkedIn</p>
+                    <a href="https://linkedin.com/company/cotechservices" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-blue-900 transition">
+                      COTECH SERVICES
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
           {/* Formulaire de contact */}
           <form onSubmit={handleSubmit} className="bg-white shadow-xl rounded-2xl p-8 border space-y-6">
             <div className="text-center mb-4">
               <h3 className="text-2xl font-bold text-blue-900">Envoyez-nous un message</h3>
               <p className="text-gray-500 text-sm mt-1">Nous vous répondrons dans les plus brefs délais</p>
             </div>
-
             {isSubmitted && (
               <div className="bg-green-50 border border-green-400 text-green-700 px-4 py-3 rounded-lg flex items-center gap-2">
                 <CheckCircle className="h-5 w-5" />
                 <span>Message envoyé avec succès ! Nous vous contacterons rapidement.</span>
               </div>
             )}
-
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Nom complet *
@@ -158,7 +159,6 @@ export default function Contact() {
                 required
               />
             </div>
-
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Email *
@@ -172,7 +172,6 @@ export default function Contact() {
                 required
               />
             </div>
-
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Téléphone
@@ -185,7 +184,6 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
               />
             </div>
-
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Sujet *
@@ -194,8 +192,7 @@ export default function Contact() {
                 className="w-full border border-gray-300 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-blue-900 transition"
                 value={form.subject}
                 onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                required
-              >
+                required>
                 <option value="">Sélectionnez un sujet</option>
                 <option value="devis">Demande de devis</option>
                 <option value="service">Informations sur un service</option>
