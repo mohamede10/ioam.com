@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import { 
   Code2, 
   Wifi, 
@@ -423,56 +424,8 @@ export default function Projets() {
           )}
         </div>
       </section>
-
-      {/* Témoignages */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
-              Ce que disent nos clients
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Ils ont fait confiance à COTECH SERVICES et témoignent
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Mamadou Diallo",
-                position: "DG, Guinea Logistics",
-                text: "L'installation réseau réalisée par COTECH SERVICES a transformé notre infrastructure. Un professionnalisme remarquable !",
-                rating: 5
-              },
-              {
-                name: "Fatoumata Camara",
-                position: "Directrice, AgriTech Guinée",
-                text: "Le système d'irrigation connecté nous a permis d'économiser 40% d'eau. Une innovation incroyable !",
-                rating: 5
-              },
-              {
-                name: "Alpha Sow",
-                position: "CEO, Transport Express",
-                text: "Le suivi GPS de notre flotte nous a fait économiser 25% de carburant. Service excellent !",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg shadow">
-                <div className="flex gap-1 text-yellow-400 mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 italic mb-4">"{testimonial.text}"</p>
-                <div className="border-t pt-3">
-                  <p className="font-semibold text-blue-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.position}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     {/* Section Témoignages */}
+        <TestimonialsSection />
 
       {/* CTA */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">

@@ -31,7 +31,7 @@ import {
   Users,
   HardDrive
 } from "lucide-react";
-
+import TestimonialsSection from "@/components/TestimonialsSection";
 export default function Services() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -497,93 +497,8 @@ export default function Services() {
           </div>
         </div>
       </section>
-
-      {/* Témoignages en Slider avec avatars colorés */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
-              Ce que disent nos clients
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Ils nous ont fait confiance et témoignent
-            </p>
-          </div>
-
-          <div className="relative">
-            {/* Boutons de navigation */}
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 bg-white shadow-lg rounded-full p-2 hover:bg-blue-900 hover:text-white transition"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 bg-white shadow-lg rounded-full p-2 hover:bg-blue-900 hover:text-white transition"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-
-            {/* Contenu du témoignage */}
-            <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 transition-all duration-500">
-              <div className="flex flex-col md:flex-row items-center gap-6">
-                {/* Avatar avec initiales et couleur personnalisée */}
-                <div className="flex-shrink-0">
-                  <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br ${testimonials[currentTestimonial].color} flex items-center justify-center border-4 border-blue-900 shadow-lg`}>
-                    <span className="text-white font-bold text-3xl">
-                      {testimonials[currentTestimonial].name.charAt(0)}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Texte à droite */}
-                <div className="flex-1 text-center md:text-left">
-                  <div className="flex justify-center md:justify-start gap-1 mb-3">
-                    {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-
-                  <div className="relative">
-                    <svg className="absolute -top-2 -left-2 w-6 h-6 text-gray-200 opacity-50" fill="currentColor" viewBox="0 0 32 32">
-                      <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-2.2 1.8-4 4-4V8h-2zM24 8c-3.3 0-6 2.7-6 6v10h10V14h-6c0-2.2 1.8-4 4-4V8h-2z"/>
-                    </svg>
-                    <p className="text-gray-700 text-base md:text-lg italic pl-6">
-                      "{testimonials[currentTestimonial].text}"
-                    </p>
-                  </div>
-
-                  <div className="mt-4">
-                    <div className="w-12 h-0.5 bg-blue-900 mx-auto md:mx-0 mb-3"></div>
-                    <p className="font-bold text-blue-900">
-                      {testimonials[currentTestimonial].name}
-                    </p>
-                    <p className="text-gray-500 text-xs">
-                      {testimonials[currentTestimonial].position}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Indicateurs */}
-            <div className="flex justify-center gap-2 mt-8">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`transition-all h-2 rounded-full ${
-                    index === currentTestimonial
-                      ? "w-8 bg-blue-900"
-                      : "w-2 bg-gray-300 hover:bg-blue-400"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Section Témoignages */}
+      <TestimonialsSection />
     </main>
   );
 }
