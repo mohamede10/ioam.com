@@ -233,7 +233,7 @@ export default function Home() {
             Qui sommes-nous ?
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4 text-justify">
-            <span className="font-semibold">COTECH SERVICES</span> est une entreprise multiservices 
+            <span className="font-semibold text-blue-900">COTECH SERVICES</span> est une entreprise multiservices 
             spécialisée dans les technologies de l'information (IT), les solutions numériques, 
             les systèmes intelligents (IoT), la maintenance matérielle et logicielle.
             L'entreprise propose des services professionnels adaptés aux particuliers, entreprises, institutions et organisations souhaitant moderniser leurs infrastructures technologiques.

@@ -19,16 +19,16 @@ export default function Formations() {
   const formations = [
     {
       id: 1,
-      title: "Développement Web Full-Stack",
+      title: "Dév Web Full-Stack",
       slug: "developpement-web-fullstack",
       icon: Code2,
       duration: "120 heures",
       description: "Devenez développeur web professionnel en maîtrisant les technologies les plus recherchées du marché.",
-      image: "/images/formations/web-dev.jpg"
+      image: "/images/services/formation/study-group-african-people.jpg"
     },
     {
       id: 2,
-      title: "Réseaux & Sécurité Informatique",
+      title: "Réseaux & Sécurité",
       slug: "reseaux-securite-informatique",
       icon: Wifi,
       duration: "80 heures",
@@ -46,7 +46,7 @@ export default function Formations() {
     },
     {
       id: 4,
-      title: "Bureautique & Informatique de Gestion",
+      title: "Informatique de base",
       slug: "bureautique-informatique-gestion",
       icon: Laptop,
       duration: "40 heures",
@@ -58,9 +58,9 @@ export default function Formations() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative w-full h-[50vh] flex items-center justify-center text-center">
+      <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <Image
-          src="/images/formations-banner.jpg"
+          src="/images/services/formation/cotech_design_salle.png"
           alt="Formations COTECH SERVICES"
           fill
           className="object-cover brightness-50"
@@ -133,15 +133,12 @@ export default function Formations() {
       </section>
 
       {/* Liste des formations simplifiée */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
-              Nos programmes de formation
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
               Des cursus adaptés à tous les niveaux et objectifs professionnels
-            </p>
+            </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -181,7 +178,7 @@ export default function Formations() {
       </section>
 
       {/* Pourquoi nous choisir */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">

@@ -105,15 +105,35 @@ export default function About() {
           </p>
         </div>
       </section>
-
-      {/* SECTION 2: Présentation Générale */}
-      <section className="py-16 bg-white">
+      {/* SECTION 8: Chiffres clés */}
+      <section className="py-10 bg-white overflow-x-auto">
         <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-12">
+            Chiffres clés
+          </h2>
+          <div className="flex gap-4 min-w-max lg:min-w-0 lg:grid lg:grid-cols-6 lg:gap-6 px-4 lg:px-0">
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <div key={index} className="text-center p-4 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition w-[160px] lg:w-auto">
+                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Icon className="h-6 w-6 text-blue-900" />
+                  </div>
+                  <div className="text-xl font-bold text-blue-900">{stat.value}</div>
+                  <div className="text-xs text-gray-600 mt-1">{stat.label}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div> 
+      </section>
+      {/* SECTION 2: Présentation Générale */}
+      <section className="py-5 bg-white">
+        <div className="max-w-7xl mx-auto px-6"> <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-6">
+                Présentation Générale de COTECH SERVICES GUINEE
+              </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-6">
-                Présentation Générale
-              </h2>
               <div className="space-y-4 text-gray-700">
                 <p>
                   <span className="font-semibold text-blue-900">COTECH SERVICES</span> est une entreprise 
@@ -160,7 +180,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
+            <div className="relative h-[550px] rounded-lg overflow-hidden shadow-xl">
               <Image
                 src="/images/apropos/pdg.jpg"
                 alt="COTECH SERVICES - Bureau"
@@ -175,7 +195,7 @@ export default function About() {
       {/* SECTION 3: Vision & Mission */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-5">
             {/* Vision */}
             <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-8 rounded-xl shadow-xl">
               <div className="flex items-center gap-3 mb-4">
@@ -222,7 +242,7 @@ export default function About() {
       </section>
 
       {/* SECTION 4: Valeurs Fondamentales */}
-      <section className="py-16 bg-white">
+      <section className="py-5 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -258,7 +278,7 @@ export default function About() {
       </section>
 
       {/* SECTION 5: Nos Services Clés */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -287,7 +307,7 @@ export default function About() {
       </section>
 
       {/* SECTION 6: Objectifs */}
-      <section className="py-16 bg-white">
+      <section className="py-5 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-12">
             Nos Objectifs
@@ -376,29 +396,6 @@ export default function About() {
               <h3 className="font-semibold text-lg mb-2">SAV efficace</h3>
               <p className="text-blue-100">Service après-vente réactif</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 8: Chiffres clés */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-12">
-            Chiffres clés
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="text-center p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition">
-                  <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="h-8 w-8 text-blue-900" />
-                  </div>
-                  <div className="text-3xl font-bold text-blue-900">{stat.value}</div>
-                  <div className="text-gray-600 mt-2">{stat.label}</div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

@@ -56,7 +56,7 @@ const formationsData = {
     ],
     prerequisites: "Bases de l'informatique, logique de programmation",
     certification: "Certificat de formation reconnu",
-    image: "/images/formations/web-dev.jpg",
+    image: "/images/services/formation/study-group-african-people.jpg",
     teacher: {
       name: "M. Mamadou Diallo",
       bio: "Expert full-stack avec 8 ans d'expérience dans le développement web",

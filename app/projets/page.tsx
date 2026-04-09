@@ -298,9 +298,9 @@ export default function Projets() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative w-full h-[40vh] flex items-center justify-center text-center">
+      <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <Image
-          src="/images/projets-banner.jpg"
+          src="/images/projets/africathinking.jpg"
           alt="Nos projets COTECH SERVICES"
           fill
           className="object-cover brightness-50"

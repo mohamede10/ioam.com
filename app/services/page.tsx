@@ -44,7 +44,7 @@ export default function Services() {
       subtitle: "Solutions numériques sur mesure",
       description: "Création de sites web professionnels et applications de gestion adaptés à vos besoins.",
       features: [
-        "Sites web vitrine, e-commerce et institutionnels",
+        "Sites web, e-commerce et institutionnels",
         "Applications web de gestion sur mesure",
         "Intégration de solutions de paiement en ligne",
         "Maintenance et optimisation de plateformes"
@@ -139,7 +139,7 @@ export default function Services() {
         "Montage vidéo et motion design",
         "Retouche photo et illustrations"
       ],
-      image: "/images/services/infographie.jpg",
+      image: "/images/services/aid_fitr.png",
       link: "/services/infographie"
     },
     {
@@ -154,7 +154,7 @@ export default function Services() {
         "Formation utilisateurs",
         "Maintenance et support"
       ],
-      image: "/images/services/odoo.jpg",
+      image: "/images/services/odooerp.png",
       link: "/services/odoo"
     },
     {
@@ -169,7 +169,7 @@ export default function Services() {
         "Installation systèmes embarqués",
         "Maintenance équipements"
       ],
-      image: "/images/services/automobile.jpg",
+      image: "/images/services/automobile.webp",
       link: "/services/automobile"
     },
     {
@@ -304,7 +304,7 @@ export default function Services() {
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <Image
-          src="/images/slide/slide1.png"
+          src="/images/slide/slideservices.png"
           alt="Nos services COTECH SERVICES"
           fill
           className="object-cover brightness-50"
@@ -315,10 +315,7 @@ export default function Services() {
             Services IT complets
           </h1>
           <p className="text-lg sm:text-xl text-gray-200">
-            Des solutions technologiques complètes pour votre entreprise
-            COTECH SERVICES vous accompagne dans tous vos projets technologiques,
-            de la conception à la maintenance, avec des solutions innovantes et
-            adaptées au contexte africain.
+            Des solutions technologiques complètes pour votre entreprise.
           </p>
         </div>
       </section>
