@@ -53,7 +53,7 @@ export default function Actualites() {
       </section>
 
       {/* Liste des actualités */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {actualites.map((article) => (

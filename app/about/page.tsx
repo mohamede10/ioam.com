@@ -193,7 +193,7 @@ export default function About() {
       </section>
 
       {/* SECTION 3: Vision & Mission */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-10 bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8 mb-5">
             {/* Vision */}
@@ -370,7 +370,7 @@ export default function About() {
       </section>
 
       {/* SECTION 7: Engagement Qualité */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <section className="py-10 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">
             Notre Engagement Qualité
@@ -401,7 +401,7 @@ export default function About() {
       </section>
 
       {/* SECTION 9: CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-10 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-3xl font-bold mb-4">
             Prêt à collaborer avec COTECH SERVICES ?

@@ -86,9 +86,9 @@ export default function ServiceAutomobileDetail() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative w-full h-[50vh] flex items-center justify-center text-center">
+      <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <Image
-          src="/images/services/automobile-hero.jpg"
+          src="/images/services/automobile/automobile.avif"
           alt="Solutions Automobile"
           fill
           className="object-cover brightness-50"
@@ -108,7 +108,7 @@ export default function ServiceAutomobileDetail() {
       </section>
 
       {/* Description principale */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -135,7 +135,7 @@ export default function ServiceAutomobileDetail() {
             </div>
             <div className="relative h-[300px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/services/automobile-detail.jpg"
+                src="/images/services/automobile/automobile.avif"
                 alt="Solutions automobile"
                 fill
                 className="object-cover"
@@ -146,7 +146,7 @@ export default function ServiceAutomobileDetail() {
       </section>
 
       {/* Services détaillés */}
-      <section id="services" className="py-16 bg-gray-50">
+      <section id="services" className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -183,7 +183,7 @@ export default function ServiceAutomobileDetail() {
       </section>
 
       {/* Équipements */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -208,7 +208,7 @@ export default function ServiceAutomobileDetail() {
       </section>
 
       {/* Processus */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-10 bg-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -238,7 +238,7 @@ export default function ServiceAutomobileDetail() {
       </section>
 
       {/* Avantages */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">
             Pourquoi choisir COTECH SERVICES ?
@@ -269,36 +269,8 @@ export default function ServiceAutomobileDetail() {
         </div>
       </section>
 
-      {/* Témoignage */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="bg-blue-100 w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0">
-                <Users className="h-12 w-12 text-blue-900" />
-              </div>
-              <div className="text-center md:text-left">
-                <div className="flex justify-center md:justify-start gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-700 text-lg italic mb-4">
-                  "COTECH SERVICES a résolu un problème électronique complexe sur mon véhicule. 
-                  Diagnostic précis, réparation rapide, et prix raisonnable. Je recommande vivement !"
-                </p>
-                <p className="font-bold text-blue-900">Ousmane Sow</p>
-                <p className="text-gray-500 text-sm">Client particulier</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-10 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-3xl font-bold mb-4">
             Problème électronique sur votre véhicule ?

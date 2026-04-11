@@ -184,7 +184,7 @@ export default function Services() {
         "Réseaux et sécurité informatique",
         "Électronique et IoT (Arduino, ESP32)"
       ],
-      image: "/images/services/formation.jpg",
+      image: "/images/services/web-dev.jpg",
       link: "/services/formation"
     },
     {
@@ -199,7 +199,7 @@ export default function Services() {
         "Architecture des systèmes d'information",
         "Stratégie cloud et infrastructure"
       ],
-      image: "/images/services/conseil.jpg",
+      image: "/images/services/audit.jpeg",
       link: "/services/conseil"
     },
     {
@@ -214,7 +214,7 @@ export default function Services() {
         "Migration vers le cloud",
         "Sauvegarde automatisée"
       ],
-      image: "/images/services/cloud.jpg",
+      image: "/images/services/cloud_hebergement.jfif",
       link: "/services/cloud"
     }
   ];
@@ -321,7 +321,7 @@ export default function Services() {
       </section>
 
       {/* Liste des services en grille 3 par ligne */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => {
@@ -384,7 +384,7 @@ export default function Services() {
       </section>
 
       {/* Pourquoi nos services */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-10 bg-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -413,7 +413,7 @@ export default function Services() {
       </section>
 
       {/* Technologies utilisées */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -461,7 +461,7 @@ export default function Services() {
       </section>
 
       {/* Processus de travail */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">

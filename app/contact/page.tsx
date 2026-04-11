@@ -26,9 +26,9 @@ export default function Contact() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
+      <section className="relative w-full h-[80vh] flex items-center ">
         <Image
-          src="/images/slide/slide1.png"
+          src="/images/contactez-nous.png"
           alt="Contact COTECH SERVICES"
           fill
           priority
@@ -45,7 +45,7 @@ export default function Contact() {
       </section>
 
       {/* Contenu principal */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-6 py-10">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Infos de contact */}
           <div className="space-y-6">

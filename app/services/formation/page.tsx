@@ -85,9 +85,9 @@ export default function ServiceFormationDetail() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative w-full h-[50vh] flex items-center justify-center text-center">
+      <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <Image
-          src="/images/services/formation-hero.jpg"
+          src="/images/services/formation/cotech_design_salle.png"
           alt="Formation IT"
           fill
           className="object-cover brightness-50"
@@ -107,7 +107,7 @@ export default function ServiceFormationDetail() {
       </section>
 
       {/* Description principale */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -134,7 +134,7 @@ export default function ServiceFormationDetail() {
             </div>
             <div className="relative h-[300px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/services/formation-detail.jpg"
+                src="/images/services/formation/cotech_design_salle.png"
                 alt="Formation informatique"
                 fill
                 className="object-cover"
@@ -145,7 +145,7 @@ export default function ServiceFormationDetail() {
       </section>
 
       {/* Formations détaillées */}
-      <section id="formations" className="py-16 bg-gray-50">
+      <section id="formations" className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -182,7 +182,7 @@ export default function ServiceFormationDetail() {
       </section>
 
       {/* Programmes */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -207,7 +207,7 @@ export default function ServiceFormationDetail() {
       </section>
 
       {/* Processus */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-10 bg-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -237,7 +237,7 @@ export default function ServiceFormationDetail() {
       </section>
 
       {/* Avantages */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">
             Pourquoi choisir nos formations ?
@@ -269,7 +269,7 @@ export default function ServiceFormationDetail() {
       </section>
 
       {/* Témoignage */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row items-center gap-8">
@@ -298,7 +298,7 @@ export default function ServiceFormationDetail() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-10 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-3xl font-bold mb-4">
             Prêt à faire évoluer votre carrière ?

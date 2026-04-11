@@ -294,7 +294,7 @@ export default function FormationDetail() {
       </section>
 
       {/* Contenu principal */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Colonne gauche - Description */}

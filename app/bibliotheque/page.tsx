@@ -12,7 +12,10 @@ import {
   Download,
   Video,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Youtube,
+  Play,
+  GraduationCap
 } from "lucide-react";
 
 export default function Bibliotheque() {
@@ -20,26 +23,26 @@ export default function Bibliotheque() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [showAllBooks, setShowAllBooks] = useState(false);
 
-  // Livres Informatique
+  // Livres Informatique avec images en ligne (Unsplash/Pexels)
   const books = [
     {
       id: 1,
       title: "Clean Code: A Handbook of Agile Software Craftsmanship",
       author: "Robert C. Martin",
       category: "programming",
-      cover: "/images/books/clean-code.jpg",
+      cover: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=500&h=300&fit=crop",
       description: "Les meilleures pratiques pour écrire du code propre et maintenable.",
-      link: "#",
+      link: "https://www.oreilly.com/library/view/clean-code-a/9780136083238/",
       level: "Intermédiaire"
     },
     {
       id: 2,
       title: "Introduction to Algorithms (CLRS)",
-      author: "Thomas H. Cormen, Charles E. Leiserson",
+      author: "Thomas H. Cormen",
       category: "algorithms",
-      cover: "/images/books/clrs.jpg",
+      cover: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=500&h=300&fit=crop",
       description: "La référence absolue en algorithmique et structures de données.",
-      link: "#",
+      link: "https://mitpress.mit.edu/books/introduction-algorithms-fourth-edition",
       level: "Avancé"
     },
     {
@@ -47,9 +50,9 @@ export default function Bibliotheque() {
       title: "The Pragmatic Programmer",
       author: "David Thomas, Andrew Hunt",
       category: "programming",
-      cover: "/images/books/pragmatic.jpg",
+      cover: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
       description: "De votre apprenti à maître artisan du développement logiciel.",
-      link: "#",
+      link: "https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/",
       level: "Intermédiaire"
     },
     {
@@ -57,9 +60,9 @@ export default function Bibliotheque() {
       title: "Design Patterns: Elements of Reusable OOP",
       author: "Erich Gamma, Richard Helm",
       category: "design-patterns",
-      cover: "/images/books/design-patterns.jpg",
+      cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop",
       description: "Les 23 patrons de conception essentiels pour les développeurs.",
-      link: "#",
+      link: "https://www.oreilly.com/library/view/design-patterns-elements/0201633612/",
       level: "Avancé"
     },
     {
@@ -67,49 +70,49 @@ export default function Bibliotheque() {
       title: "You Don't Know JS Yet",
       author: "Kyle Simpson",
       category: "web",
-      cover: "/images/books/you-dont-know-js.jpg",
+      cover: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=500&h=300&fit=crop",
       description: "Maîtrisez JavaScript en profondeur.",
-      link: "#",
+      link: "https://github.com/getify/You-Dont-Know-JS",
       level: "Débutant à Avancé"
     },
     {
       id: 6,
       title: "Database System Concepts",
-      author: "Abraham Silberschatz, Henry F. Korth",
+      author: "Abraham Silberschatz",
       category: "database",
-      cover: "/images/books/database.jpg",
+      cover: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=500&h=300&fit=crop",
       description: "Les fondamentaux des systèmes de bases de données.",
-      link: "#",
+      link: "https://www.db-book.com/",
       level: "Intermédiaire"
     },
     {
       id: 7,
       title: "Operating System Concepts",
-      author: "Abraham Silberschatz, Peter B. Galvin",
+      author: "Abraham Silberschatz",
       category: "os",
-      cover: "/images/books/os.jpg",
+      cover: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=300&fit=crop",
       description: "Les concepts clés des systèmes d'exploitation.",
-      link: "#",
+      link: "https://www.os-book.com/",
       level: "Avancé"
     },
     {
       id: 8,
       title: "Computer Networking: A Top-Down Approach",
-      author: "James F. Kurose, Keith W. Ross",
+      author: "James F. Kurose",
       category: "networking",
-      cover: "/images/books/networking.jpg",
+      cover: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=500&h=300&fit=crop",
       description: "Les fondamentaux des réseaux informatiques.",
-      link: "#",
+      link: "https://www.pearson.com/en-us/subject-catalog/p/computer-networking-a-top-down-approach/P200000003334",
       level: "Intermédiaire"
     },
     {
       id: 9,
-      title: "Structure and Interpretation of Computer Programs (SICP)",
-      author: "Harold Abelson, Gerald Jay Sussman",
+      title: "Structure and Interpretation of Computer Programs",
+      author: "Harold Abelson",
       category: "programming",
-      cover: "/images/books/sicp.jpg",
+      cover: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500&h=300&fit=crop",
       description: "Les principes fondamentaux de la programmation.",
-      link: "#",
+      link: "https://mitpress.mit.edu/sites/default/files/sicp/index.html",
       level: "Avancé"
     },
     {
@@ -117,19 +120,19 @@ export default function Bibliotheque() {
       title: "The Mythical Man-Month",
       author: "Frederick P. Brooks Jr.",
       category: "management",
-      cover: "/images/books/mythical.jpg",
+      cover: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
       description: "Essais sur le génie logiciel et la gestion de projet.",
-      link: "#",
+      link: "https://www.pearson.com/en-us/subject-catalog/p/mythical-man-month-the-essays-on-software-engineering/P200000006920",
       level: "Débutant"
     },
     {
       id: 11,
-      title: "Refactoring: Improving the Design of Existing Code",
+      title: "Refactoring: Improving Existing Code",
       author: "Martin Fowler",
       category: "programming",
-      cover: "/images/books/refactoring.jpg",
+      cover: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=500&h=300&fit=crop",
       description: "Améliorez la qualité de votre code existant.",
-      link: "#",
+      link: "https://martinfowler.com/books/refactoring.html",
       level: "Intermédiaire"
     },
     {
@@ -137,9 +140,9 @@ export default function Bibliotheque() {
       title: "Artificial Intelligence: A Modern Approach",
       author: "Stuart Russell, Peter Norvig",
       category: "ai",
-      cover: "/images/books/ai.jpg",
+      cover: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&h=300&fit=crop",
       description: "La référence en intelligence artificielle.",
-      link: "#",
+      link: "http://aima.cs.berkeley.edu/",
       level: "Avancé"
     }
   ];
@@ -158,43 +161,70 @@ export default function Bibliotheque() {
   ];
 
   // Ressources en ligne
- const resources = [
-  { name: "MDN Web Docs", url: "https://developer.mozilla.org/", category: "web", description: "Documentation complète pour le développement web" },
-  { name: "GitHub Learning Lab", url: "https://lab.github.com/", category: "devops", description: "Apprenez Git et GitHub gratuitement" },
-  { name: "Stack Overflow", url: "https://stackoverflow.com/", category: "community", description: "Communauté de développeurs" },
-  { name: "Coursera Informatique", url: "https://www.coursera.org/browse/computer-science", category: "courses", description: "Cours en ligne des meilleures universités" },
-  { name: "MIT OpenCourseWare CS", url: "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/", category: "courses", description: "Cours gratuits du MIT" },
-  { name: "LeetCode", url: "https://leetcode.com/", category: "practice", description: "Entraînez-vous aux entretiens techniques" },
-  { name: "HackerRank", url: "https://www.hackerrank.com/", category: "practice", description: "Défis de programmation" },
-  { name: "W3Schools", url: "https://www.w3schools.com/", category: "web", description: "Tutoriels pour développeurs web" },
-  { name: "FreeCodeCamp", url: "https://www.freecodecamp.org/", category: "courses", description: "Apprenez à coder gratuitement" },
-  { name: "GitHub", url: "https://github.com/", category: "devops", description: "Plateforme de développement collaboratif" },
-  { name: "Codecademy", url: "https://www.codecademy.com/", category: "courses", description: "Apprentissage interactif du code" },
-  { name: "DevDocs", url: "https://devdocs.io/", category: "web", description: "Documentation API rapide pour développeurs" },
-];
+  const resources = [
+    { name: "MDN Web Docs", url: "https://developer.mozilla.org/", category: "web", description: "Documentation complète pour le développement web" },
+    { name: "GitHub Learning Lab", url: "https://lab.github.com/", category: "devops", description: "Apprenez Git et GitHub gratuitement" },
+    { name: "Stack Overflow", url: "https://stackoverflow.com/", category: "community", description: "Communauté de développeurs" },
+    { name: "Coursera Informatique", url: "https://www.coursera.org/browse/computer-science", category: "courses", description: "Cours en ligne des meilleures universités" },
+    { name: "MIT OpenCourseWare CS", url: "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/", category: "courses", description: "Cours gratuits du MIT" },
+    { name: "LeetCode", url: "https://leetcode.com/", category: "practice", description: "Entraînez-vous aux entretiens techniques" },
+    { name: "HackerRank", url: "https://www.hackerrank.com/", category: "practice", description: "Défis de programmation" },
+    { name: "W3Schools", url: "https://www.w3schools.com/", category: "web", description: "Tutoriels pour développeurs web" },
+    { name: "FreeCodeCamp", url: "https://www.freecodecamp.org/", category: "courses", description: "Apprenez à coder gratuitement" },
+    { name: "GitHub", url: "https://github.com/", category: "devops", description: "Plateforme de développement collaboratif" },
+    { name: "Codecademy", url: "https://www.codecademy.com/", category: "courses", description: "Apprentissage interactif du code" },
+    { name: "DevDocs", url: "https://devdocs.io/", category: "web", description: "Documentation API rapide pour développeurs" },
+  ];
 
-  // Vidéos recommandées
+  // Vidéos éducatives YouTube (vraies vidéos)
   const videos = [
     {
       id: 1,
-      title: "Introduction au développement web moderne",
-      channel: "COTECH Services",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "15:30"
+      title: "Apprendre HTML & CSS - Cours Complet",
+      channel: "freeCodeCamp",
+      url: "https://www.youtube.com/embed/mU6anWqZJcc",
+      thumbnail: "https://img.youtube.com/vi/mU6anWqZJcc/maxresdefault.jpg",
+      duration: "2:15:30"
     },
     {
       id: 2,
-      title: "Les bases de l'algorithmique",
-      channel: "COTECH Services",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "22:15"
+      title: "JavaScript Tutorial for Beginners",
+      channel: "Programming with Mosh",
+      url: "https://www.youtube.com/embed/W6NZfCO5SIk",
+      thumbnail: "https://img.youtube.com/vi/W6NZfCO5SIk/maxresdefault.jpg",
+      duration: "3:26:42"
     },
     {
       id: 3,
-      title: "Découvrez React.js en 30 minutes",
-      channel: "COTECH Services",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "28:45"
+      title: "React.js - The Complete Guide",
+      channel: "Academind",
+      url: "https://www.youtube.com/embed/dpw9EHDh2bM",
+      thumbnail: "https://img.youtube.com/vi/dpw9EHDh2bM/maxresdefault.jpg",
+      duration: "1:20:00"
+    },
+    {
+      id: 4,
+      title: "Python for Beginners - Full Course",
+      channel: "Programming with Mosh",
+      url: "https://www.youtube.com/embed/_uQrJ0TkZlc",
+      thumbnail: "https://img.youtube.com/vi/_uQrJ0TkZlc/maxresdefault.jpg",
+      duration: "6:14:07"
+    },
+    {
+      id: 5,
+      title: "Git & GitHub Crash Course",
+      channel: "Traversy Media",
+      url: "https://www.youtube.com/embed/SWYqp7iY_Tc",
+      thumbnail: "https://img.youtube.com/vi/SWYqp7iY_Tc/maxresdefault.jpg",
+      duration: "30:00"
+    },
+    {
+      id: 6,
+      title: "Node.js Full Course",
+      channel: "freeCodeCamp",
+      url: "https://www.youtube.com/embed/fBNz5xF-Kx4",
+      thumbnail: "https://img.youtube.com/vi/fBNz5xF-Kx4/maxresdefault.jpg",
+      duration: "2:00:00"
     }
   ];
 
@@ -211,15 +241,18 @@ export default function Bibliotheque() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative w-full h-[40vh] flex items-center justify-center text-center">
+      <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <Image
-          src="/images/bibliotheque-banner.jpg"
+          src="/images/services/librairie.jpg"
           alt="Bibliothèque Informatique COTECH SERVICES"
           fill
           className="object-cover brightness-50"
           priority
         />
         <div className="relative z-10 max-w-3xl px-4">
+          <div className="bg-blue-900/20 backdrop-blur-sm inline-block p-3 rounded-full mb-4">
+            <BookOpen className="h-12 w-12 text-white" />
+          </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
             Bibliothèque Informatique
           </h1>
@@ -291,18 +324,13 @@ export default function Bibliotheque() {
                     className="bg-white rounded-lg shadow-lg hover:shadow-xl transition overflow-hidden group"
                   >
                     <div className="relative h-48 overflow-hidden bg-gray-100">
-                      {book.cover ? (
-                        <Image
-                          src={book.cover}
-                          alt={book.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition duration-300"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-blue-100">
-                          <BookOpen className="h-16 w-16 text-blue-300" />
-                        </div>
-                      )}
+                      <Image
+                        src={book.cover}
+                        alt={book.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition duration-300"
+                        unoptimized
+                      />
                     </div>
                     <div className="p-5">
                       <h3 className="text-lg font-semibold text-blue-900 mb-1 line-clamp-2">
@@ -318,6 +346,8 @@ export default function Bibliotheque() {
                         </span>
                         <a
                           href={book.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 text-blue-900 font-medium hover:underline text-sm"
                         >
                           Consulter <ExternalLink className="h-3 w-3" />
@@ -347,28 +377,41 @@ export default function Bibliotheque() {
           )}
         </div>
 
-        {/* Vidéos éducatives */}
+        {/* Vidéos éducatives YouTube */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-2">
-            <Video className="h-6 w-6" />
-            Tutoriels vidéo
+            <Youtube className="h-6 w-6 text-red-600" />
+            Tutoriels vidéo YouTube
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {videos.map((video) => (
-              <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="relative aspect-video bg-gray-900">
+              <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                <div className="relative aspect-video bg-gray-900 group">
+                  <img
+                    src={video.thumbnail}
+                    alt={video.title}
+                    className="w-full h-full object-cover group-hover:opacity-75 transition"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="bg-red-600 rounded-full p-3 opacity-0 group-hover:opacity-100 transition">
+                      <Play className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
                   <iframe
                     src={video.url}
                     title={video.title}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="w-full h-full"
+                    className="w-full h-full absolute top-0 left-0 hidden group-hover:block"
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-gray-900 mb-1">{video.title}</h3>
-                  <p className="text-sm text-gray-500">{video.channel}</p>
+                  <h3 className="font-semibold text-gray-900 mb-1 line-clamp-2">{video.title}</h3>
+                  <p className="text-sm text-gray-500 flex items-center gap-1">
+                    <GraduationCap className="h-3 w-3" />
+                    {video.channel}
+                  </p>
                   <p className="text-xs text-gray-400 mt-1">Durée : {video.duration}</p>
                 </div>
               </div>

@@ -54,7 +54,11 @@ export default function ServiceWebDetail() {
     { name: "Laravel", level: "Expert", color: "bg-red-100 text-red-800" },
     { name: "MySQL/PostgreSQL", level: "Avancé", color: "bg-purple-100 text-purple-800" },
     { name: "MongoDB", level: "Intermédiaire", color: "bg-green-100 text-green-800" },
-    { name: "TailwindCSS", level: "Expert", color: "bg-cyan-100 text-cyan-800" }
+    { name: "TailwindCSS", level: "Expert", color: "bg-cyan-100 text-cyan-800" },
+    // 3 nouvelles technologies ajoutées (Bootstrap + 2 autres)
+    { name: "Bootstrap", level: "Expert", color: "bg-purple-100 text-purple-800" },
+    { name: "TypeScript", level: "Avancé", color: "bg-blue-100 text-blue-800" },
+    { name: "Python/Django", level: "Avancé", color: "bg-yellow-100 text-yellow-800" }
   ];
 
   const etapes = [
@@ -87,9 +91,9 @@ export default function ServiceWebDetail() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative w-full h-[50vh] flex items-center justify-center text-center">
+      <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <Image
-          src="/images/services/web-dev-hero.jpg"
+          src="/images/services/web/developpement-web.jpg"
           alt="Développement Web & Applications"
           fill
           className="object-cover brightness-50"
@@ -100,7 +104,7 @@ export default function ServiceWebDetail() {
             <Code2 className="h-12 w-12 text-white" />
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
-            Développement Web & Applications
+            Dév Web & Apps Mobiles
           </h1>
           <p className="text-lg sm:text-xl text-gray-200">
             Des solutions numériques sur mesure pour propulser votre entreprise dans l'ère digitale
@@ -109,7 +113,7 @@ export default function ServiceWebDetail() {
       </section>
 
       {/* Description principale */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -136,7 +140,7 @@ export default function ServiceWebDetail() {
             </div>
             <div className="relative h-[300px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/services/web-dev-detail.jpg"
+                src="/images/services/web/slide_web.avif"
                 alt="Développement web"
                 fill
                 className="object-cover"
@@ -147,7 +151,7 @@ export default function ServiceWebDetail() {
       </section>
 
       {/* Services détaillés */}
-      <section id="services" className="py-16 bg-gray-50">
+      <section id="services" className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -183,8 +187,8 @@ export default function ServiceWebDetail() {
         </div>
       </section>
 
-      {/* Technologies utilisées */}
-      <section className="py-16 bg-white">
+      {/* Technologies utilisées - 9 technologies */}
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
@@ -195,10 +199,10 @@ export default function ServiceWebDetail() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {technologies.map((tech, index) => (
-              <div key={index} className="flex items-center justify-between p-4 border rounded-lg hover:shadow-md transition">
-                <span className="font-semibold text-gray-900">{tech.name}</span>
+              <div key={index} className="flex items-center justify-between p-4 border rounded-lg hover:shadow-md transition group">
+                <span className="font-semibold text-gray-900 group-hover:text-blue-900">{tech.name}</span>
                 <span className={`px-3 py-1 rounded-full text-xs font-medium ${tech.color}`}>
                   {tech.level}
                 </span>
@@ -209,7 +213,7 @@ export default function ServiceWebDetail() {
       </section>
 
       {/* Processus */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-10 bg-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -239,7 +243,7 @@ export default function ServiceWebDetail() {
       </section>
 
       {/* Avantages */}
-      <section className="py-16 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">
             Pourquoi choisir COTECH SERVICES ?
@@ -268,39 +272,9 @@ export default function ServiceWebDetail() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Témoignage */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="bg-blue-100 w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0">
-                <Users className="h-12 w-12 text-blue-900" />
-              </div>
-              <div className="text-center md:text-left">
-                <div className="flex justify-center md:justify-start gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-700 text-lg italic mb-4">
-                  "COTECH SERVICES a développé notre site e-commerce. Le résultat est bluffant : 
-                  design moderne, paiement Mobile Money intégré, et un accompagnement parfait. 
-                  Notre chiffre d'affaires en ligne a augmenté de 40% !"
-                </p>
-                <p className="font-bold text-blue-900">Mamadou Diallo</p>
-                <p className="text-gray-500 text-sm">CEO, Djoma Market</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      </section>      
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-10 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-3xl font-bold mb-4">
             Prêt à donner vie à votre projet web ?
@@ -323,6 +297,7 @@ export default function ServiceWebDetail() {
             </Link>
           </div>
         </div>
+        <br />
         <SocialLinks variant="light" showContact={true} />
       </section>
     </main>

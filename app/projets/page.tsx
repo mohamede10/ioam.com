@@ -368,7 +368,7 @@ export default function Projets() {
       </section>
 
       {/* Grille des projets */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12">
@@ -428,7 +428,7 @@ export default function Projets() {
         <TestimonialsSection />
 
       {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-10 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-3xl font-bold mb-4">
             Vous avez un projet similaire ?

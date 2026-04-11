@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import FormationSection  from "@/components/FormationSection";
 import { 
   Code2, 
   Wifi, 
@@ -227,7 +228,7 @@ export default function Home() {
       </section>
 
       {/* Présentation rapide */}
-      <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+      <section className="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-12 items-center">
         <div className="text-center md:text-left">
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
             Qui sommes-nous ?
@@ -338,44 +339,10 @@ export default function Home() {
           })}
         </div>
       </section>
-
       {/* Formation & Accompagnement */}
-      <section className="py-16 bg-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <GraduationCap className="h-16 w-16 mx-auto mb-4" />
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Formation & Certification
-          </h2>
-          <p className="text-xl mb-6 max-w-2xl mx-auto">
-            Nous formons la prochaine génération d'experts en technologies numériques
-          </p>
-          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
-            <div className="bg-blue-800 p-4 rounded-lg">
-              <h4 className="font-semibold mb-2">Bureautique & Internet</h4>
-              <p className="text-sm text-blue-100">Initiation à l'informatique</p>
-            </div>
-            <div className="bg-blue-800 p-4 rounded-lg">
-              <h4 className="font-semibold mb-2">Développement Web</h4>
-              <p className="text-sm text-blue-100">HTML/CSS, JavaScript, PHP</p>
-            </div>
-            <div className="bg-blue-800 p-4 rounded-lg">
-              <h4 className="font-semibold mb-2">Réseaux & IoT</h4>
-              <p className="text-sm text-blue-100">Administration, Arduino, capteurs</p>
-            </div>
-          </div>
-          <div className="mt-8">
-            <a
-              href="/formations"
-              className="px-6 py-3 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-100 transition"
-            >
-              Découvrir nos formations
-            </a>
-          </div>
-        </div>
-      </section>
-
+      <FormationSection />
       {/* Contact et horaires */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             <div>

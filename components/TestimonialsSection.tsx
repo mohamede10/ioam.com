@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
   const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+    <section className="py-10 bg-gradient-to-br from-blue-50 to-white">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
