@@ -1,5 +1,6 @@
 "use client";
 import SocialLinks from "@/components/SocialLinks";
+import Link from "next/link";
 import Image from "next/image";
 import { 
   Eye, 
@@ -90,7 +91,7 @@ export default function About() {
       {/* SECTION 1: Hero Section */}
       <section className="relative w-full h-[60vh] flex items-center justify-center text-center">
         <Image
-          src="/images/slide/slide2.jpg"
+          src="/images/services/librairie.jpg"
           alt="À propos de COTECH SERVICES"
           fill
           className="object-cover brightness-50"
@@ -180,14 +181,21 @@ export default function About() {
               </div>
             </div>
 
-            <div className="relative h-[550px] rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/images/apropos/pdg.jpg"
-                alt="COTECH SERVICES - Bureau"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <div className="relative h-[530px] rounded-lg overflow-hidden shadow-xl group cursor-pointer">
+                <Link href="/profil">
+                  <Image
+                    src="/images/apropos/pdg.jpg"
+                    alt="COTECH SERVICES - Bureau"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="bg-white/90 text-blue-900 px-4 py-2 rounded-lg font-semibold">
+                      Voir mon profil →
+                    </span>
+                  </div>
+                </Link>
+              </div>
           </div>
         </div>
       </section>
