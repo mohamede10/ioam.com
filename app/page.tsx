@@ -35,7 +35,7 @@ export default function Home() {
       icon: GraduationCap
     },
     {
-      src: "/images/slide/slide2.jpg",
+      src: "/images/slide/slide2.png",
       alt: "COTECH SERVICES - Solutions Numériques",
       title: "Solutions IT sur Mesure",
       subtitle: "Transformez votre entreprise avec le digital",
