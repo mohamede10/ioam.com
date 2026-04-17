@@ -114,7 +114,7 @@ export default function Header() {
         {/* Bouton burger (mobile) */}
         <button
           onClick={() => setIsOpen(true)}
-          className="sm:hidden p-4 rounded-xl hover:bg-black text-3xl font-bold w-14 h-14 flex items-center justify-center"
+          className="sm:hidden p-4 rounded-xl hover:bg-gray-100 text-3xl font-bold w-14 h-14 flex items-center justify-center"
           aria-label="Menu"
         >
           ☰
@@ -140,6 +140,9 @@ export default function Header() {
           <Link href="/e-shop" className={navLinkClass("/e-shop")}>
             E-shop
           </Link>
+          <Link href="/catalogue" className={navLinkClass("/catalogue")}>
+            Catalogue
+          </Link>
           <Link href="/contact" className={navLinkClass("/contact")}>
             Contact
           </Link>
@@ -149,10 +152,10 @@ export default function Header() {
       {/* Menu mobile (modal) - Version compacte */}
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-black rounded-lg w-5/6 max-w-sm p-4 relative">
+          <div className="bg-white rounded-lg w-5/6 max-w-sm p-4 relative">
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-2 right-2 text-gray-600 text-2xl hover:text-black transition-colors"
+              className="absolute top-2 right-2 text-gray-600 text-2xl hover:text-gray-900"
             >
               ✕
             </button>
