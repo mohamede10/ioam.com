@@ -317,6 +317,14 @@ export default function Services() {
           <p className="text-lg sm:text-xl text-gray-200">
             Des solutions technologiques complètes pour votre entreprise.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3 justify-center">
+               <a
+                 href="/catalogue"
+                 className="px-6 py-3 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 transition"
+               >
+                Voir le catalogue de services
+               </a>
+              </div>
         </div>
       </section>
 

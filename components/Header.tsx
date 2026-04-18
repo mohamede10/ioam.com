@@ -140,9 +140,6 @@ export default function Header() {
           <Link href="/e-shop" className={navLinkClass("/e-shop")}>
             E-shop
           </Link>
-          <Link href="/catalogue" className={navLinkClass("/catalogue")}>
-            Catalogue
-          </Link>
           <Link href="/contact" className={navLinkClass("/contact")}>
             Contact
           </Link>
