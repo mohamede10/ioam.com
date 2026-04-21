@@ -11,27 +11,27 @@ const formationData = {
     {
       title: "Bureautique & Internet",
       description: "Initiation à l'informatique, traitement de texte, tableurs, navigation web",
-      icon: "💻"
+      icon: ""
     },
     {
       title: "Développement Web",
       description: "HTML/CSS, JavaScript, PHP, frameworks modernes",
-      icon: "🌐"
+      icon: ""
     },
     {
       title: "Réseaux & IoT",
       description: "Administration réseau, Arduino, ESP32, capteurs intelligents",
-      icon: "📡"
+      icon: ""
     },
     {
       title: "Design & Infographie",
       description: "Photoshop, Illustrator, création de logos, montage vidéo",
-      icon: "🎨"
+      icon: ""
     },
     {
       title: "Maintenance & Support IT",
       description: "Dépannage matériel, installation système, sécurité informatique",
-      icon: "🔧"
+      icon: ""
     }
   ]
 };
